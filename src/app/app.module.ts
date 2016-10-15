@@ -7,12 +7,20 @@ import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {ShoutsComponent} from './shouts/shouts.component';
+
+
+// Services
+import {ShoutsService} from './services/shouts.service'
+
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        AboutComponent
+        AboutComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,
@@ -21,7 +29,10 @@ import {AboutComponent} from './about/about.component';
         JsonpModule,
         routing
     ],
-    providers: [appRoutingProviders],
+    providers: [
+        appRoutingProviders,
+        ShoutsService
+        ],
     bootstrap: [AppComponent]
 })
 
