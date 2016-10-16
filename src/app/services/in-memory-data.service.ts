@@ -16,7 +16,17 @@ export class InMemoryDataService implements InMemoryDbService {
 
         ]; 
 
-        return {shouts};
+        let comments = [
+
+            {id:1, userID:"Alexandra", message:"Seria bueno si la oficina de Recursos Humanos automatizara el proceso atraves del CTI para que sea algo mecanico."},
+            {id:2, userID:"Abdiela", message: "Cobrando una vez al mes no se puede, mucho menos cuando nuestro contrato está por quincena."},
+            {id:3, userID:"Andrea", message: "Cansada de que la internet siempre se caiga, hasta en el trabajo"},
+            {id:4, userID:"Roberta", message: "Estoy totalmente de acuerdo, esto es ridiculo!!!!!"},
+            {id:5, userID:"Royina", message: "A-a-a-a-a-alomejor si no dependieran tanto de una sola persona para crear el proceso, los estudiantes por jornal cobrarian a tiempo"}
+
+        ];
+
+        return {shouts, comments};
     }
 
 }
