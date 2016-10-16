@@ -25,6 +25,7 @@ export class CommentsComponent implements OnInit {
     }
 
     addComment(comment: Comments){
+        
 
     }
 
