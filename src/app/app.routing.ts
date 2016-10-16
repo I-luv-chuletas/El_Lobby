@@ -8,13 +8,15 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 import {ShoutsComponent} from './shouts/shouts.component';
+import {AnalyticsComponent} from './analytics/analytics.component';
 
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
     { path: 'about', component: AboutComponent},
     { path: 'create-shout', component: CreateShoutComponent},
     { path: 'detail/:id', component: ShoutDetailsComponent},
-    { path: 'shouts', component: ShoutsComponent}
+    { path: 'shouts', component: ShoutsComponent},
+    { path: 'analytics', component: AnalyticsComponent}
 ];
 
 export const appRoutingProviders: any[] = [];
