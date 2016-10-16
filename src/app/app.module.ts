@@ -9,6 +9,7 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
+import {CommentComponent} from './comments/comment.component';
 
 
 // Services
@@ -20,7 +21,8 @@ import {ShoutsService} from './services/shouts.service'
         AppComponent,
         HomeComponent,
         AboutComponent,
-        DashboardComponent
+        DashboardComponent,
+        CommentComponent
     ],
     imports: [
         BrowserModule,

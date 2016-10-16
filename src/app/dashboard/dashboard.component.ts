@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoutsService } from '../services/shouts.service';
-import { Shouts } from '../shouts'
+import { Shouts } from '../shouts';
 import { Router } from '@angular/router';
 
 @Component({
