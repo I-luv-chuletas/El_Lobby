@@ -3,11 +3,26 @@
 <div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
     <div class="col-sm-7">
         <form class="form-horizontal">
-            <div class="form-group">
+            <div class="form-comment">
                 <label for="username">Name: </label>
                 <input type="text" class="form-control" placeholder="Write your opinion!" id="comment-message">
+               <button type="button" class="btn btn-success">Post </button>
             </div>
         </form>    
+    </div>
+
+    <div *ngFor="let comment of comments">
+         <div class="row col-sm-12">
+            <div class="list-group">
+            <a href="#" class="list-group-item">
+                <p class="list-group-item-text">{{comment.message}} </p>
+                <p>
+                <i class="glyphicon glyphicon-thumbs-down text-warning"> 5</i>
+                <i class="glyphicon glyphicon-thumbs-up pull-right text-success"> 5</i>
+                </p>
+            </a>
+            </div>
+         </div>
     </div>
 </div>
 
