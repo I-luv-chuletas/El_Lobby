@@ -6,17 +6,19 @@
                   <div class="col-sm-7">
                     <form class="form-horizontal">
                       <div class="form-group">
-                        <label for="titulo-alegato">Asunto</label>
-                        <input type="text" class="form-control" placeholder="Asunto del Alegato o Petición" id="titulo-alegato">
+                        <label for="titulo-alegato">Title: </label> <input [(ngModel)]="shout.title" placeholder="Enter your title.."/>
+                      </div>
+                        <div class="form-group">
+                        <label for="nombre-usuario">Username: </label> <input [(ngModel)]="shout.userID"  placeholder="Enter your name.."/>
                       </div>
                       <div class="form-group">
-                        <label for="explicacion-alegato">Elabora</label>
-                        <textarea class="form-control" rows="3"  placeholder="Elabora y Explica acerca del Alegato o Petición" id="explicacion-alegato"></textarea>
+                        <label for="explicacion-alegato">Elaborate!</label>
+                        <textarea class="form-control" rows="3" [(ngModel)]="shout.message"  placeholder="Discuss the found issues here!" id="explicacion-alegato"></textarea>
                       </div>
                       <div class="form-group">
-                        <label for="seleccione-destinatario"> Destinatarios del Alegato</label>
+                        <label for="seleccione-destinatario"> Office/Department of Issue</label>
                         <select class="form-control" id="seleccione-destinatario">
-                            <option value="" disabled selected style="display: none;">Eliga una Oficina...</option>
+                            <option value="" disabled selected style="display: none;">Select an Office...</option>
                             <option>Admisiones</option>
                             <option>Asistencia Economica</option>
                             <option>Archivo General</option>
@@ -56,18 +58,18 @@
                             <option>Servicios Medicos</option>
                         </select>
                       </div>
-                      <div class="form-group">
+                     <!-- <div class="form-group">
                         <label for="tags">Tags</label>
                         <input type="text" class="form-control" placeholder="Añade al menos un tag" id="tags">
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <div class="checkbox">
                           <label>
                             <input type="checkbox" value="subscribirme">
-                             Subscribirme a las Respuestas de este algato
+                             Subscribe me to this discussion thread
                           </label>
                         </div>
                       </div>
-                      <button type="submit" (click)="create(shout)" class="btn btn-default pull-right btn-lg">Someter Alegato</button>
+                      <button type="submit" (click)="create()" class="btn btn-primary pull-right btn-lg">Create new Shout!</button>
                     </form>
                   </div>
