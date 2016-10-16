@@ -6,5 +6,7 @@ export class Shouts {
     commentSectionId: number;
     title: string;
     message: string;
+    category: string;
+
     
 }

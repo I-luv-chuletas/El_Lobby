@@ -24,6 +24,15 @@ export class ShoutsService {
         return this.getShouts().then(shouts => shouts.find(shout.id === id));
     }
 
+    update(shout: Shouts): Promise<Shouts>{
+        
+        const url = `${this.shoutsURL}/${shout.id}`;
+
+        return this.http.post(url, JSON.stringify(shout), {headers: this.headers}).toPromise()
+        .then(() => shout)
+        .catch(this.handleError);
+    }
+
     // getShouts(): Promise<Shouts[]>{
     //     return Promise.resolve(SHOUTS);
     // }
