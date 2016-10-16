@@ -14,7 +14,8 @@ export class ShoutsComponent implements OnInit {
 
     constructor(
         private shoutService: ShoutsService,
-        private router: Router
+        private router: Router,
+        private location: Location
     ) { }
 
     ngOnInit() { 

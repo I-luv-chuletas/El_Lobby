@@ -14,10 +14,8 @@ export class DashboardComponent implements OnInit {
     shouts: Shouts[] = [];
 
     constructor(
-
         private shoutService: ShoutsService,
         private router: Router
-        
     ) { }
 
     ngOnInit() { 

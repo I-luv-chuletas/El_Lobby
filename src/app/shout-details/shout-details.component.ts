@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
 import { ShoutsService } from '../services/shouts.service';

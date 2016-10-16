@@ -1,0 +1,10 @@
+<div *ngIf="shout">
+    <h3>{{shout.title}}</h3> <h5 class="pull-right control-group">Rate: {{shout.rating}}</h5>
+    <div><label>Created by:</label> {{shout.userID}} </div>
+    
+
+    <div class="container">
+        {{shout.message}}
+    </div>
+
+</div>

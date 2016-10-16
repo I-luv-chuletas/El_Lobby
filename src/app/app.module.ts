@@ -11,6 +11,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentComponent} from './comments/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
+import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 
 // Services
 import {ShoutsService} from './services/shouts.service'
@@ -29,7 +30,8 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         DashboardComponent,
         CommentComponent,
         CreateShoutComponent,
-        ShoutsComponent
+        ShoutsComponent,
+        ShoutDetailsComponent
     ],
     imports: [
         BrowserModule,
