@@ -9,6 +9,8 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
+import {CommentComponent} from './comments/comment.component';
+import {CreateShoutComponent} from './create-shout/create-shout.component';
 
 // Services
 import {ShoutsService} from './services/shouts.service'
@@ -24,7 +26,9 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         AppComponent,
         HomeComponent,
         AboutComponent,
-        DashboardComponent
+        DashboardComponent,
+        CommentComponent,
+        CreateShoutComponent
     ],
     imports: [
         BrowserModule,
