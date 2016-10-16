@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http} from '@angular/http';
 import { Shouts } from '../shouts';
-import {SHOUTS} from '../mock-shouts';
+
 
 import 'rxjs/add/operator/toPromise';
 
@@ -20,9 +20,11 @@ export class ShoutsService {
         .catch(this.handleError);
     } 
 
+
     getShout(id: number): Promise<Shouts> {
-        return this.getShouts().then(shouts => shouts.find(shout.id === id));
+        return this.getShouts().then(shouts => shouts.find(shout => shout.id === id));
     }
+
 
     update(shout: Shouts): Promise<Shouts>{
         
@@ -30,6 +32,13 @@ export class ShoutsService {
 
         return this.http.post(url, JSON.stringify(shout), {headers: this.headers}).toPromise()
         .then(() => shout)
+        .catch(this.handleError);
+    }
+
+
+    create(shout:Shouts): Promise<Shouts>{
+        return this.http.post(this.shoutsURL, JSON.stringify(shout), {headers: this.headers}).toPromise()
+        .then(response => response.json().data)
         .catch(this.handleError);
     }
 

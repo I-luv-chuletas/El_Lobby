@@ -1,0 +1,14 @@
+
+
+<div *ngIf="shout">
+    <h3>{{shout.title}}</h3> <blockquote class="pull-right control-group">Rate: {{shout.rating}}</blockquote>
+    <div><label>Created by:</label> {{shout.userID}} </div>
+
+
+    <div class="text-center container">
+        {{shout.message}}
+    </div>
+
+</div>
+
+<button type="button" class="btn btn-large">Edit</button>
