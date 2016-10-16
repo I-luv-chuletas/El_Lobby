@@ -11,10 +11,20 @@ import { Comments } from '../comments';
 
 export class CommentsComponent implements OnInit {
 
-    constructor() { }
+    commentSection: Comments[] = [];
+
+    constructor(
+        private commentService: CommentsService
+    ) { }
 
     ngOnInit() { 
+        // Para efectos del hackathon lo dejaremos así, para aplicacioón real necesitamos que envie el id para recoger los
+        // comments reales de acuerdo a que 'shout' es.
+        this.commentService.getComments().then(comments => this.commentSection = comments);
+    }
 
+    addComment(comment: Comments){
+        
     }
 
 }
