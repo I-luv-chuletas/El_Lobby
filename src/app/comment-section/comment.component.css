@@ -2,9 +2,3 @@
     width: 400px; 
     height:100px;
 }
-
-label {
-    display: inline-block;
-    margin-bottom: 5px;
-    vertical-align: top;
-}
