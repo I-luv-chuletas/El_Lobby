@@ -6,7 +6,8 @@ import { ShoutsService } from '../services/shouts.service';
 
 @Component({
     selector: 'shout-detail',
-    template: require('./shout-details.component.html')
+    template: require('./shout-details.component.html'),
+    styles: [require('./shout-details.component.css')]
 })
 export class ShoutDetailsComponent implements OnInit {
 

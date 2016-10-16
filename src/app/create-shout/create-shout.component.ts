@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'create-shout',
@@ -6,4 +6,6 @@ import {Component} from '@angular/core';
 })
 
 export class CreateShoutComponent {
+    
+
 }
