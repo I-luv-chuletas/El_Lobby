@@ -4,7 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {CommentComponent} from './comments/comment.component';
+// import {CommentComponent} from './comments/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 import {ShoutsComponent} from './shouts/shouts.component';
@@ -12,7 +12,6 @@ import {ShoutsComponent} from './shouts/shouts.component';
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
     { path: 'about', component: AboutComponent},
-    { path: 'comment', component: CommentComponent},
     { path: 'create-shout', component: CreateShoutComponent},
     { path: 'detail/:id', component: ShoutDetailsComponent},
     { path: 'shouts', component: ShoutsComponent}

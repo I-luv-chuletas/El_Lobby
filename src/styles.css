@@ -1,5 +1,6 @@
 body {
     font-family: Cambria, Georgia;
+    margin-left: 100px; 
 }
 
 h1 {
@@ -18,6 +19,12 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.title{
+    color: #240;
+    font-weight: bold;
+    font-size:300%;
 }
 
 .header-container, .main-container, .footer-container {

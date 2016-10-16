@@ -2,7 +2,7 @@ export class Shouts {
 
     id: number;
     rating: number;
-    userID: number;
+    userID: string;
     commentSectionId: number;
     title: string;
     message: string;
