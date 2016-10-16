@@ -12,6 +12,7 @@ import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentsComponent} from './comment-section/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
+import {AnalyticsComponent} from './analytics/analytics.component'
 
 
 // Services
@@ -33,8 +34,9 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         CommentsComponent,
         CreateShoutComponent,
         ShoutsComponent,
-        ShoutDetailsComponent
-        
+        ShoutDetailsComponent,
+        AnalyticsComponent
+
     ],
     imports: [
         BrowserModule,

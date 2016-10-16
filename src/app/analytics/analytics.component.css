@@ -1,0 +1,12 @@
+ul{
+  list-style: none;
+  display: inline-block;
+}
+
+li{
+  border-style: solid;
+  border-radius: 3px;
+  border-color: black;
+  border-width: 2px;
+
+}

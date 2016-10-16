@@ -1,9 +1,19 @@
-export const DEPS: Deps[]=[
+import {Component} from '@angular/core';
+
+
+@Component({
+    selector: 'analytics',
+    template: require('./analytics.component.html'),
+    styles: [require('./analytics.component.css')]
+})
+
+export class AnalyticsComponent {
+  departamentos = [
   'Admisiones',
   'Asistencia Economica',
   'Archivo General',
   'Biblioteca',
-  'Calidad de Vida'
+  'Calidad de Vida',
   'Centro de Investigacion y Creacion',
   'Centro para el Desarrollo de Competencias Linguisticas y de Informatica',
   'Centro Tecnologias de Informacion',
@@ -37,3 +47,4 @@ export const DEPS: Deps[]=[
   'Seguridad y Vigilancia',
   'Servicios Medicos'
   ];
+}
