@@ -4,14 +4,21 @@ div {
     margin-right: 0.2%;
 }
 
-.odd {
+.odd { 
     background-color: #f2f9ff;
-
 }
+
+.odd:hover{
+    background-color: lightgray;
+}
+
 .even {
     background-color: #eceff3;
 }
 
+.even:hover{
+    background-color: lightgray;
+}
 h4 {
     height: 2em;
 }
