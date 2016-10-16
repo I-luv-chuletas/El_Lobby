@@ -6,12 +6,13 @@ import { Comments } from '../comments';
 
 @Component({
     selector: 'comment-section',
-    template: require('./comment.component.html')
+    template: require('./comment.component.html'),
+    styles: [require('./comment.component.css')]
 })
 
 export class CommentsComponent implements OnInit {
 
-    commentSection: Comments[] = [];
+    comments: Comments[] = [];
 
     constructor(
         private commentService: CommentsService
@@ -20,11 +21,11 @@ export class CommentsComponent implements OnInit {
     ngOnInit() { 
         // Para efectos del hackathon lo dejaremos así, para aplicacioón real necesitamos que envie el id para recoger los
         // comments reales de acuerdo a que 'shout' es.
-        this.commentService.getComments().then(comments => this.commentSection = comments);
+        this.commentService.getComments().then(comments => this.comments = comments);
     }
 
     addComment(comment: Comments){
-        
+
     }
 
 }
