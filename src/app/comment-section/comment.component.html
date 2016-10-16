@@ -14,15 +14,18 @@
     <div *ngFor="let comment of comments">
          <div class="row col-sm-12">
             <div class="list-group">
-            <a href="#" class="list-group-item">
-                <p class="list-group-item-text">{{comment.message}} </p>
-                <p>
-                <i class="glyphicon glyphicon-thumbs-down text-warning"> 5</i>
-                <i class="glyphicon glyphicon-thumbs-up pull-right text-success"> 5</i>
-                </p>
-            </a>
+                <form class="list-group-item">
+                    <p class="list-group-item-text"><b>{{comment.userID}} </b></p>
+                    <p class="list-group-item-text">{{comment.message}}</p>
+                    <p>
+                        <i class="glyphicon glyphicon-thumbs-down text-warning" (click)="rate(0)"></i>
+                        <i class="glyphicon glyphicon-thumbs-up pull-right text-success" (click)="rate(1)"> {{comment.rating}}</i>
+                    </p>
+                </form>
             </div>
          </div>
     </div>
 </div>
+
+
 
