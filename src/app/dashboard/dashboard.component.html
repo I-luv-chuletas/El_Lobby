@@ -3,9 +3,12 @@
     <ul class="shout-list">
         <ul *ngFor="let shout of shouts" > 
             <div class="module shout"> 
-                <a href="" ><h4>{{shout.title}}</h4></a>
+                <p>{{shout.title}}</p>
+                <small>{{shout.rating}}</small>
+                <small class="pull-right">{{shout.userId}}</small>
+                <!--<a href="" ><h4>{{shout.title}}</h4></a>
                 <h5>{{shout.id}}</h5>
-                <h5>{{shout.rating}}</h5>
+                <h5>{{shout.rating}}</h5>-->
             </div>
         </ul>
     </ul>
