@@ -7,8 +7,15 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ShoutsService {
     
+    private shoutsURL = "app/shouts";
+    private headers   = new Headers({"Content-Type": "applications/json" });
+
     constructor(
-        
+        private http:Http
     ) { }
+
+    getShouts(): Promise<Shouts> {
+        return this.http.get(this.shoutsURL).toPromise().then(response => response.json().data as Shouts);
+    }
 
 }

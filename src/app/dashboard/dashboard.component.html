@@ -1,7 +1,16 @@
 <h1>Shouts</h1>
 <ul class="nav nav-tabs">
-    <li role="presentation" class="active"> <a routerLink="#"> Popular Shouts </a> </li>
-    <li role="presentation" class="active"> <a routerLink="/archive"> Archive </a></li>
-    <li role="presentation" class="active"> <a routerLink="/solutions"> Solutions </a></li>
-    <li role="presentation" class="active"> <a routerLink="/create-shout"> Make New Shout <i class="glyphicon glyphicon-plus"></i> </a></li>
+    <li role="presentation" class="active"> <a href="#"> Popular Shouts </a> </li>
+    <li role="presentation" class="active"> <a href="/archive"> Archive </a></li>
+    <li role="presentation" class="active"> <a href="/solutions"> Solutions </a></li>
+    <li role="presentation" class="active"> <a href="/create-shout"> Make New Shout <i class="glyphicon glyphicon-plus"></i> </a></li>
 </ul>
+
+<div class="row">
+    <div *ngFor="let shout of shouts" class="col-md-1"> 
+        <div class="shout-module"> 
+            <h4>{{shout.title}}</h4>
+            <h4>{{shout.id}}</h4>
+        </div>
+    </div>
+</div>

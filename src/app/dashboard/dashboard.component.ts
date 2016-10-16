@@ -14,13 +14,13 @@ export class DashboardComponent implements OnInit {
 
     constructor(
 
-        shoutService: ShoutsService,
+        private shoutService: ShoutsService,
         private router: Router
         
     ) { }
 
     ngOnInit() { 
-
+        this.shoutService.getShouts().then(shouts => this.shouts);
     }
 
 }
