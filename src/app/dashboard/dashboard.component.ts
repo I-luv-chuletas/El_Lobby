@@ -21,6 +21,8 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() { 
         this.shoutService.getShouts().then(shouts => this.shouts);
+        console.log('Tamo exotico:\n')
+        console.log(this.shouts)
     }
 
 }

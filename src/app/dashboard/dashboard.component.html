@@ -4,14 +4,14 @@
     <li role="presentation" class="active"> <a href="#"> Popular Shouts </a> </li>
     <li role="presentation" class="active"> <a href="/archive"> Archive </a></li>
     <li role="presentation" class="active"> <a href="/solutions"> Solutions </a></li>
+    <li role="presentation" class="active"> <a href="/shouts"> View Shouts </a></li>
     <li role="presentation" class="active"> <a href="/create-shout"> Make New Shout <i class="glyphicon glyphicon-plus"></i> </a></li>
 </ul>
 
 <div class="row">
     <div *ngFor="let shout of shouts" class="col-md-1"> 
-        <div class="shout-module"> 
+        <div class="module shout"> 
             <h4>{{shout.title}}</h4>
-            <h4>{{shout.id}}</h4>
         </div>
     </div>
 </div>
