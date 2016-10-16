@@ -30,6 +30,7 @@ export class CreateShoutComponent implements OnInit{
         // this.supa.userID = userID;
         // this.supa.message = message;
         // title: string, userID: string, message: string
+        console.log(JSON.stringify(this.shout));
         this.shoutService.create(this.shout).then( () => this.goBack() );
     }
 
