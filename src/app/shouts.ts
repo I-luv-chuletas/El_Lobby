@@ -7,6 +7,6 @@ export class Shouts {
     title: string;
     message: string;
     category: string;
-
+    status: string;
     
 }

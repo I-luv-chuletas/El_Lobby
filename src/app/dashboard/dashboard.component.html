@@ -2,7 +2,7 @@
 <div *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;"
       class="row"
       [ngClass]="{ odd: odd, even: even }">
-      <h4>{{shout.title}}, {{shout.userID}}</h4>
+      <a href=""><h4>{{shout.title}}, {{shout.id}}</h4></a>
       <h4 class="pull-right">{{shout.rating}}</h4>
   </div>
   

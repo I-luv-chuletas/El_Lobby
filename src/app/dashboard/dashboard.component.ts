@@ -26,4 +26,10 @@ export class DashboardComponent implements OnInit {
         console.log(this.shouts)
     }
 
+
+    showDetails(shout: Shouts): void {
+        let link = ['/detail', shout.id];
+        this.router.navigate(link);
+    }
+
 }
