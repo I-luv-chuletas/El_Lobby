@@ -1,12 +1,12 @@
 <h1>Shouts</h1>
 <div class="row">
     <ul class="shout-list">
-        <li *ngFor="let shout of shouts" > 
+        <ul *ngFor="let shout of shouts" > 
             <div class="module shout"> 
                 <a href="" ><h4>{{shout.title}}</h4></a>
                 <h5>{{shout.id}}</h5>
                 <h5>{{shout.rating}}</h5>
             </div>
-        </li>
+        </ul>
     </ul>
 </div>
