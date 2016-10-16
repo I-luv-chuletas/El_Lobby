@@ -11,9 +11,13 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentComponent} from './comments/comment.component';
 
-
 // Services
 import {ShoutsService} from './services/shouts.service'
+
+// In memory web api, para simular http
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './services/in-memory-data.service';
+
 
 
 @NgModule({
