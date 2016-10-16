@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'lobby-dashboard',
-    template: require('./dashboard.component.html')
+    template: require('./dashboard.component.html'),
+    styles: [require("./dashboard.component.css")]
 })
 
 export class DashboardComponent implements OnInit {

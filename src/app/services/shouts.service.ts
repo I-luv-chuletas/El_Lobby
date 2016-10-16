@@ -18,6 +18,10 @@ export class ShoutsService {
     getShouts(): Promise<Shouts[]> {
         return this.http.get(this.shoutsURL).toPromise().then(response => response.json().data as Shouts[])
         .catch(this.handleError);
+    } 
+
+    getShout(id: number): Promise<Shouts> {
+        return this.getShouts().then(shouts => shouts.find(shout.id === id));
     }
 
     // getShouts(): Promise<Shouts[]>{
