@@ -6,12 +6,14 @@ import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CommentComponent} from './comments/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
+import {ShoutsComponent} from './shouts/shouts.component'
 
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
     { path: 'about', component: AboutComponent},
     { path: 'comment', component: CommentComponent},
-    { path: 'create-shout', component: CreateShoutComponent}
+    { path: 'create-shout', component: CreateShoutComponent},
+    { path: 'shouts', component: ShoutsComponent}
 ];
 
 export const appRoutingProviders: any[] = [];

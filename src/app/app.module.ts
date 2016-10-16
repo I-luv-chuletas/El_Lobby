@@ -28,7 +28,8 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         AboutComponent,
         DashboardComponent,
         CommentComponent,
-        CreateShoutComponent
+        CreateShoutComponent,
+        ShoutsComponent
     ],
     imports: [
         BrowserModule,
