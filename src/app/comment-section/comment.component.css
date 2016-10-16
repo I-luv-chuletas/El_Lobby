@@ -1,4 +1,10 @@
 .form-comment{
-    width: 400px; 
-    height:100px;
+    padding-top: 3%;
+    width: 80%; 
+    height: 10%;
+}
+
+.list-group-item{
+    margin-left: auto;
+    margin-right: auto;
 }
