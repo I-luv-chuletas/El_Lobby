@@ -7,8 +7,10 @@ import { ShoutsService} from '../services/shouts.service';
 })
 export class ShoutsComponent implements OnInit {
 
+
     constructor(
         shoutService: ShoutsService
+        
     ) { }
 
     ngOnInit() { 
