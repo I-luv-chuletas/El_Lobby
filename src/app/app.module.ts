@@ -33,7 +33,8 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         FormsModule,
         HttpModule,
         JsonpModule,
-        routing
+        routing,
+        InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
     providers: [
         appRoutingProviders,
