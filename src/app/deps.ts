@@ -1,3 +1,4 @@
+
 export const DEPS: string[]=[
   'Admisiones',
   'Asistencia Economica',
@@ -37,3 +38,9 @@ export const DEPS: string[]=[
   'Seguridad y Vigilancia',
   'Servicios Medicos'
   ];
+
+export class Departamento {
+  
+  name: string;
+  porcentaje: number;
+}

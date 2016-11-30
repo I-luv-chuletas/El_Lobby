@@ -12,7 +12,8 @@ import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentsComponent} from './comment-section/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
-import {AnalyticsComponent} from './analytics/analytics.component'
+import {AnalyticsComponent} from './analytics/analytics.component';
+import {Departamento} from './deps';
 
 
 // Services
@@ -49,7 +50,8 @@ import {InMemoryDataService} from './services/in-memory-data.service';
     providers: [
         appRoutingProviders,
         CommentsService,
-        ShoutsService
+        ShoutsService,
+        Departamento
         ],
     bootstrap: [AppComponent]
 })

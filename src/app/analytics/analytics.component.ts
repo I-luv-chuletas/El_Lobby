@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Departamento} from '../deps';
 
 
 @Component({
@@ -8,7 +9,11 @@ import {Component} from '@angular/core';
 })
 
 export class AnalyticsComponent {
-  departamentos = [
+
+  dept: Departamento[];
+  i: number = 0; 
+
+  departamentos: string[] = [
   'Admisiones',
   'Asistencia Economica',
   'Archivo General',
@@ -47,4 +52,13 @@ export class AnalyticsComponent {
   'Seguridad y Vigilancia',
   'Servicios Medicos'
   ];
+
+  insertValue(departamentos: string[], dept: Departamento[], i: number): Departamento[] {
+    for (var item of departamentos){
+      dept[i].name = item;
+      i++
+    }
+    return dept;
+  }
 }
+ 
