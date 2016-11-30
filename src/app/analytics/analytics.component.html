@@ -1,9 +1,24 @@
 <div class="container">
-<h1>Procentaje De quejas</h1>
+<h1>Porcentaje De Quejas</h1>
 
+
+
+<!--<table>
+    <th>
+        <td>Departamento</tr>
+        <td>Porcentaje</tr>
+    </th>
+    <tr>
+        <td *ngFor="let dept of departamentos">{{dep}}</td>
+    </tr>
+    <tr>
+        <td *ngFor="let dept of departamentos">0%</td>
+    </tr>
+</table>-->
 
 <ul>
-<li class="item-box" *ngFor="let dep of departamentos">{{dep.nombre}} <p>0%</p></li>
+<li class="item-box" *ngFor="let dept of departamentos">{{dept}} 0%<hr></li>
 </ul>
+
 
 </div>
