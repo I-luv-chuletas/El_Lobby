@@ -22,6 +22,8 @@ import {CommentsService} from './services/comments.service';
 // In memory web api, para simular http
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
+import { Login.component.tsComponent } from './login.component.ts/login.component.ts.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -36,8 +38,10 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         ShoutsComponent,
         ShoutDetailsComponent,
         AnalyticsComponent
-
-    ],
+,
+    Login.component.tsComponent,
+    LoginComponent
+],
     imports: [
         BrowserModule,
         FormsModule,
