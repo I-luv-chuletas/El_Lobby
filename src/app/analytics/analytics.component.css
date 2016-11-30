@@ -4,9 +4,9 @@ ul{
 }
 
 li{
-  border-style: solid;
-  border-radius: 3px;
-  border-color: black;
-  border-width: 2px;
+  line-height: 2em;
+}
 
+hr {
+  color: black;
 }
