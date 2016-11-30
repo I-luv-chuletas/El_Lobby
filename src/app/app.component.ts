@@ -12,5 +12,5 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         console.log('AppComponent initializing...');
     }
-    title = "El Lobby" 
+    title = "El Lobby!" 
 }
