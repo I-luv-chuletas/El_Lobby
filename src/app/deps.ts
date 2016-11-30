@@ -1,9 +1,9 @@
-export const DEPS: Deps[]=[
+export const DEPS: string[]=[
   'Admisiones',
   'Asistencia Economica',
   'Archivo General',
   'Biblioteca',
-  'Calidad de Vida'
+  'Calidad de Vida',
   'Centro de Investigacion y Creacion',
   'Centro para el Desarrollo de Competencias Linguisticas y de Informatica',
   'Centro Tecnologias de Informacion',
