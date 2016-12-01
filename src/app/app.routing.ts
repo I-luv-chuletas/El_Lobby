@@ -20,11 +20,8 @@ const appRoutes: Routes = [
     { path: 'detail/:id', component: ShoutDetailsComponent},
     { path: 'shouts', component: ShoutsComponent},
     { path: 'analytics', component: AnalyticsComponent},
-<<<<<<< HEAD
-    {path: 'shouts-menu', component: ShoutMenuComponent}
-=======
+    {path: 'shouts-menu', component: ShoutMenuComponent},
     { path: 'login', component: LoginComponent}
->>>>>>> 1bdda4e33f29fd61ed8c29585d9b942b3e12ee23
 ];
 
 export const appRoutingProviders: any[] = [];
