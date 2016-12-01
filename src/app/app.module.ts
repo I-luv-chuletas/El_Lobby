@@ -25,6 +25,8 @@ import {CommentsService} from './services/comments.service';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -39,10 +41,8 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         ShoutsComponent,
         ShoutDetailsComponent,
         AnalyticsComponent,
-        ShoutMenuComponent
-
-,
-    
+        ShoutMenuComponent,
+        LoginComponent
 ],
     imports: [
         BrowserModule,

@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 
 export class CreateShoutComponent implements OnInit{
     
-    @Input() shout: Shouts;
+    @Input() shout = new Shouts();
 
     private supa: Shouts;
     
@@ -26,17 +26,15 @@ export class CreateShoutComponent implements OnInit{
     ){}
 
     create(){
-        // this.supa.title = title;
-        // this.supa.userID = userID;
-        // this.supa.message = message;
-        // title: string, userID: string, message: string
+        
+        this.shout.rating = 0;
         console.log(JSON.stringify(this.shout));
         this.shoutService.create(this.shout).then( () => this.goBack() );
     }
 
     goBack():void {
 
-        let link = ['#']
+        let link = ['']
         this.router.navigate(link);
     }
 }
