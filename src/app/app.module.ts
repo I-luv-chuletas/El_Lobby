@@ -52,7 +52,8 @@ import { LoginComponent } from './login/login.component';
     providers: [
         appRoutingProviders,
         CommentsService,
-        ShoutsService
+        ShoutsService,
+        Departamento
         ],
     bootstrap: [AppComponent]
 })
