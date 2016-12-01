@@ -14,6 +14,7 @@ import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {Departamento} from './deps';
+import {ShoutMenuComponent} from './ShoutMenu/ShoutMenu.component';
 
 
 // Services
@@ -23,6 +24,7 @@ import {CommentsService} from './services/comments.service';
 // In memory web api, para simular http
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
+
 
 
 
@@ -36,9 +38,12 @@ import {InMemoryDataService} from './services/in-memory-data.service';
         CreateShoutComponent,
         ShoutsComponent,
         ShoutDetailsComponent,
-        AnalyticsComponent
+        AnalyticsComponent,
+        ShoutMenuComponent
 
-    ],
+,
+    
+],
     imports: [
         BrowserModule,
         FormsModule,

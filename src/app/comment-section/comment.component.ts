@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 
 
+
 @Component({
     selector: 'comment-section',
     template: require('./comment.component.html'),
@@ -13,10 +14,14 @@ import { Comments } from '../comments';
 export class CommentsComponent implements OnInit {
 
     comments: Comments[] = [];
+    
 
     constructor(
         private commentService: CommentsService
-    ) { }
+    ) 
+    {
+        
+     }
 
     ngOnInit() { 
         // Para efectos del hackathon lo dejaremos así, para aplicacioón real necesitamos que envie el id para recoger los
@@ -24,9 +29,11 @@ export class CommentsComponent implements OnInit {
         this.commentService.getComments().then(comments => this.comments = comments);
     }
 
-    addComment(comment: Comments){
-        
+    addComment(comment: Comments)
+    {}
 
-    }
+
+
+    
 
 }
