@@ -41,6 +41,7 @@ export class ShoutsService {
         return this.http.post(this.shoutsURL, JSON.stringify(shout), {headers: this.headers}).toPromise()
         .then(response => response.json().data)
         .catch(this.handleError).then();
+
     }
 
     // getShouts(): Promise<Shouts[]>{

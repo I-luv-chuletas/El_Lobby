@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Shouts} from '../shouts';
 import {Router} from '@angular/router';
 import { ShoutsService} from '../services/shouts.service';
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'shout-component',
