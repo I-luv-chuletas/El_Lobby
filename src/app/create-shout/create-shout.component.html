@@ -4,60 +4,25 @@
               <!--body-->
               <div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
                   <div class="col-sm-7">
-                    <form class="form-horizontal">
+                    <form name="main-form" class="form-horizontal">
+                      
+                      <div name="title-form" class="form-group">
+                        <label for="titulo-alegato">Title: </label> <input [(ngModel)]="shout.title" name="titulo" placeholder="Enter your title.."/>
+                      </div>
+
                       <div class="form-group">
-                        <label for="titulo-alegato">Title: </label> <input [(ngModel)]="shout.title" placeholder="Enter your title.."/>
+                        <label for="nombre-usuario">Username: </label> <input [(ngModel)]="shout.userID" name="username" placeholder="Enter your name.."/>
                       </div>
-                        <div class="form-group">
-                        <label for="nombre-usuario">Username: </label> <input [(ngModel)]="shout.userID"  placeholder="Enter your name.."/>
-                      </div>
+
                       <div class="form-group">
                         <label for="explicacion-alegato">Elaborate!</label>
-                        <textarea class="form-control" rows="3" [(ngModel)]="shout.message"  placeholder="Discuss the found issues here!" id="explicacion-alegato"></textarea>
+                        <textarea class="form-control" rows="3" [(ngModel)]="shout.message"  name="message" placeholder="Discuss the found issues here!" id="explicacion-alegato"></textarea>
                       </div>
+
                       <div class="form-group">
                         <label for="seleccione-destinatario"> Office/Department of Issue</label>
-                        <select class="form-control" id="seleccione-destinatario">
-                            <option value="" disabled selected style="display: none;">Select an Office...</option>
-                            <option>Admisiones</option>
-                            <option>Asistencia Economica</option>
-                            <option>Archivo General</option>
-                            <option>Biblioteca</option>
-                            <option>Calidad de Vida</option>
-							<option>Centro de Investigacion y Creacion</option>
-                            <option>Centro para el Desarrollo de Competencias Linguisticas y de Informatica</option>
-                            <option>Centro Tecnologias de Informacion</option>
-                            <option>Centro Virtual de Carreras</option>
-                            <option>Consejeria y Servicios Psicologicos</option>
-							<option>Decanato Academico</option>
-                            <option>Decanato Administrativo</option>
-                            <option>Decanato Estudiantil</option>
-                            <option>Deportes</option>
-                            <option>Educacion Continua y Estudios Profesionales (DECEP)</option>
-							<option>Exalumnos</option>
-                            <option>Finanzas</option>
-                            <option>ISMuL</option>
-                            <option>Pagaduria</option>
-                            <option>Planificacion y Estudios Institucionales</option>
-							<option>Presupuesto</option>
-                            <option>Procuraduria Estudiantil</option>
-                            <option>Programa Calidad de Vida</option>
-                            <option>Programa de Estudios de Honor</option>
-                            <option>Programa de Intercambio Estudiantil</option>
-							<option>Programa de Servicios Educativos (PSE)</option>
-                            <option>Proyecto Comunidades de Aprendizaje</option>
-                            <option>Recaudaciones</option>
-                            <option>Rectoria</option>
-                            <option>Recursos Externos</option>
-							<option>Recursos Fisicos</option>
-                            <option>Recursos Humanos</option>
-                            <option>Registraduria</option>
-                            <option>Oficina de Servicios a Estudiantes con Impedimentos - OSEI</option>
-                            <option>Salud y Seguridad</option>
-							<option>Seguridad y Vigilancia</option>
-                            <option>Servicios Medicos</option>
-                        </select>
                       </div>
+
                      <!-- <div class="form-group">
                         <label for="tags">Tags</label>
                         <input type="text" class="form-control" placeholder="Añade al menos un tag" id="tags">
@@ -73,3 +38,5 @@
                       <button type="submit" (click)="create()" class="btn btn-primary pull-right btn-lg">Create new Shout!</button>
                     </form>
                   </div>
+              </div>
+</div>

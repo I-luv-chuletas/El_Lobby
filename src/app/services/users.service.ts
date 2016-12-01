@@ -10,7 +10,11 @@ export class UsersService {
     private headers  = new Headers({"Content-Type" : "application.json"});
 
     constructor(
-        private http: Http;
+        private http: Http
     ) { }
+
+
+    
+
 }
 

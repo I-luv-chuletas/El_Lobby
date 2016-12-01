@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 
 export class CreateShoutComponent implements OnInit{
     
-    @Input() shout: Shouts;
+    @Input() shout = new Shouts();
 
     private supa: Shouts;
     
@@ -36,7 +36,7 @@ export class CreateShoutComponent implements OnInit{
 
     goBack():void {
 
-        let link = ['#']
+        let link = ['']
         this.router.navigate(link);
     }
 }
