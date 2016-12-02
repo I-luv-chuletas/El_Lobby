@@ -1,3 +1,10 @@
-<p>
-  login works!
-</p>
+<h1>Login</h1>
+    <form class="form-horizontal">
+          <div class="form-comment">
+              <h2>{{model.userId}}</h2>
+              <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Username" name="name">
+              <h2>{{model.content}}</h2>
+              <input [(ngModel)]="model.content" type="password" class="form-control" placeholder="Password" name="password">
+             <button class="btn btn-success pull-right" (click)="commentService.addComment(model)">Login</button>
+          </div>
+    </form>   
