@@ -37,9 +37,11 @@ export class ShoutsService {
 
 
     create(shout:Shouts): Promise<Shouts>{
+
         return this.http.post(this.shoutsURL, JSON.stringify(shout), {headers: this.headers}).toPromise()
         .then(response => response.json().data)
-        .catch(this.handleError);
+        .catch(this.handleError).then();
+
     }
 
     // getShouts(): Promise<Shouts[]>{
@@ -47,6 +49,7 @@ export class ShoutsService {
     // }
 
     private handleError(error: any): Promise<any> {
+        console.log('AAAAAH encontre un putazo error pai');
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
