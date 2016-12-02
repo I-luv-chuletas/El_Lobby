@@ -30,4 +30,8 @@ export class CommentsComponent implements OnInit {
       // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.model); }
 
+    rate () {
+        
+    }
+
 }
