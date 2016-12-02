@@ -3,15 +3,15 @@
 
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     <div class="btn-group btn-group-lg" role="group">
-        <button type="button-lg" class="btn btn-default">Statistics by Department</button>        
+        <button type="button-lg" class="btn btn-default" (click)="chooseOption(1)" name="uno">Statistics by Department</button>        
     </div>
 
     <div class="btn-group btn-group-lg" role="group">
-        <button type="button-lg" class="btn btn-default">General Statistics</button>
+        <button type="button-lg" class="btn btn-default" (click)="chooseOption(2)" name="dos">General Statistics</button>
     </div>
 
     <div class="btn-group btn-group-lg" role="group">
-        <button type="button-lg" class="btn btn-default">Statistics by Popularity</button>
+        <button type="button-lg" class="btn btn-default" (click)="chooseOption(3)" name="tres">Statistics by Popularity</button>
     </div>
     
 </div>
@@ -23,7 +23,7 @@
 </ul>
 
 <div>
-    
+    <button></button>
 </div>
 
 <!--<table>
