@@ -2,11 +2,7 @@ import {Departamento} from './deps';
 
 export class Users {
 
-    constructor(public username: string, public pass: string, public mail: string, public dept: string){
-        this.userName = username;
-        this.password = pass;
-        this.email = mail;
-        this.departmentName = dept;
+    constructor(){
     }
 
     id: number;

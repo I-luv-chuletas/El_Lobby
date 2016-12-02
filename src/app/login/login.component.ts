@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   signup = false;
 
-  model = new Users('', '', '', '');
+  model = new Users();
 
   ngOnInit() {
   }
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
+    console.log(JSON.stringify(this.model));
   }
 
 }

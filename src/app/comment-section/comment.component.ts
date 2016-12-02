@@ -15,7 +15,7 @@ export class CommentsComponent implements OnInit {
 
     comments: Comments[];
 
-    model = new Comments(0, 1, "Esto es un comentario");
+    model = new Comments();
 
     constructor(
         private commentService: CommentsService
@@ -29,5 +29,9 @@ export class CommentsComponent implements OnInit {
 
       // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.model); }
+
+    rate () {
+        
+    }
 
 }
