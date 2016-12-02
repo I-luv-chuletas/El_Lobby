@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Departamento, DEPS} from '../deps';
+import { Users } from '../users';
 
 @Component({
   selector: 'app-signup',
@@ -8,11 +9,16 @@ import {Departamento, DEPS} from '../deps';
 })
 export class SignupComponent implements OnInit {
 
+  model = new Users ('', '', '', '');
   departamentos = DEPS;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  signUp() {
+
   }
 
 }

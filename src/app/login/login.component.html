@@ -1,9 +1,9 @@
 <h1>Login</h1>
     <form class="form-horizontal">
           <div class="form-login">
-              <input [(ngModel)]="model.userName" type="text" class="form-control" placeholder="Username" name="name" required>
+              <input [(ngModel)]="model.userName" type="text" class="form-control" placeholder="Username" name="username" required>
               <input [(ngModel)]="model.password" type="password" class="form-control" placeholder="Password" name="password" required>
-             <button class="btn btn-success pull-right" (click)="commentService.addComment(model)">Login</button>
+             <button class="btn btn-success pull-right" (click)="login(model)">Login</button>
           </div>
     </form>
 

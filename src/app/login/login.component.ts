@@ -12,15 +12,20 @@ export class LoginComponent implements OnInit {
 
   signup = false;
 
-  model = new Users();
+  model = new Users('', '', '', '');
 
   ngOnInit() {
   }
 
   revealSignup() {
-    console.log(this.signup);
-    this.signup = true;
-    console.log(this.signup);
+    if(!this.signup)
+      this.signup = true;
+    else if(this.signup)
+      this.signup = false;
+  }
+
+  login() {
+
   }
 
 }
