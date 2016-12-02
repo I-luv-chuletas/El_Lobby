@@ -1,9 +1,5 @@
 <div class="general-shouts">
-    <ul class="posted">
-        <li *ngFor="let shout of shouts" class="col-md-4">
-            <span class="badge">{{shout.id}}</span> 
-            <span>{{shout.title}}</span>
-
-        </li>       
+    <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted">
+            <li><h4>{{shout.title}}</h4></li>
     </ul>
 </div>

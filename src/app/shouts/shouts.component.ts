@@ -6,7 +6,8 @@ import {Location} from '@angular/common';
 
 @Component({
     selector: 'shout-component',
-    template: require('./shouts.component.html')
+    template: require('./shouts.component.html'),
+    styles: [(require('./shouts.component.css'))]
 })
 export class ShoutsComponent implements OnInit {
 
