@@ -14,9 +14,6 @@ import { FormsModule } from '@angular/forms';
 export class CommentsComponent implements OnInit {
 
     comments: Comments[];
-    comment: Comments;
-
-    submmited = false;
 
     model = new Comments(0, 1, "Esto es un comentario");
 
