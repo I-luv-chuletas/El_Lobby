@@ -27,11 +27,8 @@ export class CommentsComponent implements OnInit {
         this.commentService.getComments().then(comments => this.comments = comments);
     }
 
-      // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.model); }
-
-    rate () {
-        
+    rate (rating: number) {
+        console.log(JSON.stringify(rating))
     }
 
 }

@@ -8,3 +8,7 @@
     margin: auto;
     border: none;
 }
+
+i:hover {
+    cursor: pointer;
+}

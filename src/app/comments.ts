@@ -5,4 +5,5 @@ export class Comments {
     id: number;
     userId: number;
     content: string;
+    rating: number;
 }
