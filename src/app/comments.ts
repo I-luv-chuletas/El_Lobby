@@ -1,6 +1,4 @@
 export class Comments {
 
-    id: number;
-    userID: string;
-    rating: number;
+    constructor(public id: number, public userId: number, public content: string){}
 }

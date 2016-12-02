@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -12,7 +13,12 @@ import { Comments } from '../comments';
 
 export class CommentsComponent implements OnInit {
 
-    comments: Comments[] = [];
+    comments: Comments[];
+    comment: Comments;
+
+    submmited = false;
+
+    model = new Comments(0, 1, "Esto es un comentario");
 
     constructor(
         private commentService: CommentsService
@@ -24,9 +30,7 @@ export class CommentsComponent implements OnInit {
         this.commentService.getComments().then(comments => this.comments = comments);
     }
 
-    addComment(comment: Comments){
-        
-
-    }
+      // TODO: Remove this when we're done
+    get diagnostic() { return JSON.stringify(this.model); }
 
 }

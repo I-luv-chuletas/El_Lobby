@@ -5,7 +5,11 @@
 }
 
 .list-group-item{
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     border: none;
+}
+
+.container {
+    width: 80%;
+    margin-top: 15px;
 }

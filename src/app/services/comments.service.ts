@@ -19,6 +19,7 @@ export class CommentsService {
     }
 
     addComment(comment: Comments): Promise<Comments>{
+        console.log(JSON.stringify(comment));
         return this.http.post(this.commentsURL,JSON.stringify(comment),{headers: this.headers})
         .toPromise()
         .then(response => response.json().data);

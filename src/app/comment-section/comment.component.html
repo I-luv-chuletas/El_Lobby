@@ -2,14 +2,19 @@
 
 <div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
     <div class="col-sm-7">
+
         <form class="form-horizontal">
             <div class="form-comment">
-                <input type="text" class="form-control" placeholder="Name" id="user_name">
-                <input type="text" class="form-control" placeholder="Write your opinion!" id="comment-message">
-               <button type="button" class="btn btn-success pull-right">Post</button>
+                <h2>{{model.userId}}</h2>
+                <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Name" name="name">
+                <h2>{{model.content}}</h2>
+                <input [(ngModel)]="model.content" type="text" class="form-control" placeholder="Write your opinion!" name="content">
+               <button class="btn btn-success pull-right" (click)="commentService.addComment(model)">Post</button>
             </div>
         </form>    
     </div>
+
+    <hr>
 
     <div *ngFor="let comment of comments">
          <div class="row col-sm-12">
