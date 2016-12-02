@@ -41,6 +41,8 @@ export const DEPS: string[]=[
 
 export class Departamento {
   
+  id: number;
   name: string;
   porcentaje: number;
+  
 }
