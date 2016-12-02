@@ -20,7 +20,10 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="seleccione-destinatario"> Office/Department of Issue</label>
+                        <label for="office-department"> Office/Department of Issue</label>
+                        <select class="form-control" id="deparment" name="departmento" required [(ngModel)]="shout.taggedDepts">
+                        <option *ngFor="let dept of departamentos; let index=index; ">{{dept}}</option>
+                        </select>
                       </div>
 
                      <!-- <div class="form-group">

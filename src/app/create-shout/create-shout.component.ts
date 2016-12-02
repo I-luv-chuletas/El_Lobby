@@ -3,6 +3,8 @@ import {ShoutsService} from '../services/shouts.service';
 import {Shouts} from '../shouts';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
+import {Departamento, DEPS} from '../deps';
+
 
 @Component({
     selector: 'create-shout',
@@ -12,8 +14,8 @@ import {Location} from '@angular/common';
 export class CreateShoutComponent implements OnInit{
     
     @Input() shout = new Shouts();
+    departamentos = DEPS;
 
-    private supa: Shouts;
     
     ngOnInit(){
         
@@ -30,6 +32,7 @@ export class CreateShoutComponent implements OnInit{
         this.shout.rating = 0;
         console.log(JSON.stringify(this.shout));
         this.shoutService.create(this.shout).then( () => this.goBack() );
+
     }
 
     goBack():void {
