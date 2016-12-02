@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Users } from '../users';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,17 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  signup = false;
+
+  model = new Users();
+
   ngOnInit() {
+  }
+
+  revealSignup() {
+    this.signup = true;
+    console.log(this.signup);
+    console.log('Tamo esotico?');
   }
 
 }
