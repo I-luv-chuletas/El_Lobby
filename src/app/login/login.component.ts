@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   }
 
   revealSignup() {
+    console.log(this.signup);
     this.signup = true;
     console.log(this.signup);
-    console.log('Tamo esotico?');
   }
 
 }

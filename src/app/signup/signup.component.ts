@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Departamento, DEPS} from '../deps';
 
 @Component({
   selector: 'app-signup',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [require('./signup.component.css')]
 })
 export class SignupComponent implements OnInit {
+
+  departamentos = DEPS;
 
   constructor() { }
 

@@ -1,10 +1,16 @@
+<hr>
 <h1>Signup</h1>
     <form class="form-horizontal">
           <div class="form-signup">
-              <h2>{{model.userId}}</h2>
-              <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Username" name="name">
-              <h2>{{model.content}}</h2>
-              <input [(ngModel)]="model.content" type="password" class="form-control" placeholder="Password" name="password">
+              <input [(ngModel)]="model.userName" type="text" class="form-control" placeholder="Username" name="name" required>
+              <input [(ngModel)]="model.password" type="password" class="form-control" placeholder="Password" name="password" required>
+              <input [(ngModel)]="model.email" type="text" class="form-control" placeholder="Email" name="email" required>
+              <div class="form-group">
+                  <label for="office-department"> Office/Department of Issue</label>
+                  <select class="form-control" id="deparment" name="departmento" required [(ngModel)]="model.departmentName" required>
+                  <option *ngFor="let dept of departamentos; let index=index;">{{dept}}</option>
+                  </select>
+              </div>
              <button class="btn btn-success pull-right" (click)="signUp()">Sign Up</button>
           </div>
     </form>
