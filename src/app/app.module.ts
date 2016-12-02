@@ -26,6 +26,7 @@ import {InMemoryDataService} from './services/in-memory-data.service';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { SolutionsComponent } from './solutions/solutions.component';
 
 
 
@@ -41,7 +42,8 @@ import { SignupComponent } from './signup/signup.component';
         ShoutDetailsComponent,
         AnalyticsComponent,
         LoginComponent,
-        SignupComponent
+        SignupComponent,
+    SolutionsComponent
 ],
     imports: [
         BrowserModule,
