@@ -6,3 +6,8 @@ ul{
 li{
   line-height: 2em;
 }
+
+.btn-group{
+  width: 75%;
+  height: 500%;
+}
