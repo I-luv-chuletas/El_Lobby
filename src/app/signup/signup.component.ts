@@ -9,7 +9,7 @@ import { Users } from '../users';
 })
 export class SignupComponent implements OnInit {
 
-  model = new Users ('', '', '', '');
+  model = new Users ();
   departamentos = DEPS;
 
   constructor() { }
@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-
+    console.log(JSON.stringify(this.model));
   }
 
 }

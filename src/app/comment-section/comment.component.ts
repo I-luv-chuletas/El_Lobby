@@ -15,7 +15,7 @@ export class CommentsComponent implements OnInit {
 
     comments: Comments[];
 
-    model = new Comments(0, 1, "Esto es un comentario");
+    model = new Comments();
 
     constructor(
         private commentService: CommentsService
