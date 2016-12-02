@@ -1,8 +1,6 @@
-<h1>Shout Menu</h1>
-<div id="shoutDiv" *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" (click)="showDetails(shout)"
-      class="row"
-      [ngClass]="{ odd: odd, even: even }">
-      <h4>{{shout.title}}</h4>
-      <h5 class="pull-left">{{shout.userID}}</h5><h4 class="pull-right"> {{shout.rating}} </h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
-</div>
-  
+<h1>Top Rated Shouts</h1>
+<h2>All Shouts</h2>
+
+      <div>
+            <h3>{{item.title}} yeah man!!</h3>
+      </div>

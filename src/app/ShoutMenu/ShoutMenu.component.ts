@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Shouts} from '../shouts';
-import {Router} from '@angular/router';
-import { ShoutsService} from '../services/shouts.service';
+import { Shouts } from '../shouts';
+import { Router } from '@angular/router';
+import { ShoutsService } from '../services/shouts.service';
 
 @Component({
 	selector: 'shouts-menu',
@@ -11,6 +11,15 @@ import { ShoutsService} from '../services/shouts.service';
 
 export class ShoutMenuComponent implements OnInit {
 
+	item: Shouts = {
+  	id: 37,
+	  rating: 43,
+	  userID: '69',
+	  commentSectionId: 5,
+	  title: 'okay!!',
+	  message: 'suifaghrurguigfaqgfruqighrgugudfhuigfuhsiugf'
+	};
+
 	 shouts_menu: Shouts[] = [];
 
     constructor(
@@ -18,11 +27,10 @@ export class ShoutMenuComponent implements OnInit {
         private router: Router
     ) { }
 
-	ngOnInit() 
-	{
+	ngOnInit() {
 		this.shoutService.getShouts().then(shouts => this.shouts_menu = shouts);
-        console.log('Tamo exotico:\n')
-        console.log(this.shouts_menu)
+        console.log(JSON.stringify(this.shouts_menu));
+        console.log(this.shouts_menu);
 	}
 
 	showDetails(shout: Shouts): void 
