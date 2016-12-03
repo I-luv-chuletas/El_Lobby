@@ -27,6 +27,9 @@ import {InMemoryDataService} from './services/in-memory-data.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SolutionsComponent } from './solutions/solutions.component';
+// import { DepartmentAnalysisComponent } from './home/department-analysis/department-analysis.component';
+import { DepartmentAnalysisComponent } from './department-analysis/department-analysis.component';
+import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
 
 
 
@@ -43,7 +46,10 @@ import { SolutionsComponent } from './solutions/solutions.component';
         AnalyticsComponent,
         LoginComponent,
         SignupComponent,
-    SolutionsComponent
+    SolutionsComponent,
+    DepartmentAnalysisComponent,
+    DepartmentAnalysisComponent,
+    ShoutsAnalysisComponent
 ],
     imports: [
         BrowserModule,
