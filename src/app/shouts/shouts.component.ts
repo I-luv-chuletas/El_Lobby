@@ -33,4 +33,9 @@ export class ShoutsComponent implements OnInit {
       this.shoutService.getShouts()
                        .subscribe((data) => this.shouts = data, err => console.log(err));
     }
+
+    showDetails(shout: Shouts): void {
+        let link = ['/detail', shout.id];
+        this.router.navigate(link);
+    }
 }

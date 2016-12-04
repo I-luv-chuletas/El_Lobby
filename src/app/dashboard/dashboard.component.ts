@@ -25,8 +25,8 @@ export class DashboardComponent implements OnInit {
                        .subscribe(
                          shouts => this.shouts = shouts,
                          error =>  this.errorMessage = <any>error);
-        console.log('Tamo exotico:\n')
-        console.log(this.shouts)
+        console.log('Tamo exotico:\n');
+        console.log(this.shouts);
     }
 
 
