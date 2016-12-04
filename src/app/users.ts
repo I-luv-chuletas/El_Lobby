@@ -1,9 +1,10 @@
-import {Departamento} from './deps'; 
+import {Departamento} from './deps';
 
 export class Users {
 
-    constructor(){
-    }
+  constructor(values: Object = {}) {
+    Object.assign(this, values);
+  }
 
     id: number;
     // name: string;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Comments } from '../comments';
-import {Headers, Http} from '@angular/http';
+import { Headers, Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Rx';
 
 
 @Injectable()
@@ -13,16 +14,15 @@ export class CommentsService {
         private http: Http
     ) { }
 
-    getComments(): Promise<Comments[]>{
-        return this.http.get(this.commentsURL).toPromise()
-        .then(response => response.json().data as Comments[]);
+    getComments(): Observable<Comments[]>{
+      return this.http.get(this.commentsURL)
+                      .map((res:Response) => res.json())
+                      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    addComment(comment: Comments): Promise<Comments>{
-        console.log(JSON.stringify(comment));
+    addComment(comment: Comments): Observable<Comments>{
         return this.http.post(this.commentsURL,JSON.stringify(comment),{headers: this.headers})
-        .toPromise()
-        .then(response => response.json().data);
+                        .map((res:Response) => res.json())
+                        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
-
 }

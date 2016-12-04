@@ -1,6 +1,8 @@
 export class Comments {
 
-    constructor(){}
+  constructor(values: Object = {}) {
+    Object.assign(this, values);
+  }
 
     id: number;
     userId: number;
