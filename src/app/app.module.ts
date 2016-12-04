@@ -21,8 +21,8 @@ import {ShoutsService} from './services/shouts.service'
 import {CommentsService} from './services/comments.service';
 
 // In memory web api, para simular http
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './services/in-memory-data.service';
+//import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+//import {InMemoryDataService} from './services/in-memory-data.service';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -57,7 +57,6 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
         HttpModule,
         JsonpModule,
         routing,
-        InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
     providers: [
         appRoutingProviders,

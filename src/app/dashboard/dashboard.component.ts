@@ -11,15 +11,20 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
 
-    shouts: Shouts[] = [];
+    shouts: Shouts[];
+    mode = 'Observable';
+    errorMessage: string;
 
     constructor(
         private shoutService: ShoutsService,
         private router: Router
     ) { }
 
-    ngOnInit() { 
-        this.shoutService.getShouts().then(shouts => this.shouts = shouts);
+    ngOnInit() {
+      this.shoutService.getShouts()
+                       .subscribe(
+                         shouts => this.shouts = shouts,
+                         error =>  this.errorMessage = <any>error);
         console.log('Tamo exotico:\n')
         console.log(this.shouts)
     }

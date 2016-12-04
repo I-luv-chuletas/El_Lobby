@@ -8,6 +8,7 @@ import { ShoutsService } from '../services/shouts.service';
     selector: 'shout-detail',
     template: require('./shout-details.component.html'),
     styles: [require('./shout-details.component.css')]
+    //providers: [ShoutsService]
 })
 export class ShoutDetailsComponent implements OnInit {
 
@@ -15,21 +16,21 @@ export class ShoutDetailsComponent implements OnInit {
 
     constructor(
         private shoutService: ShoutsService,
-        private route: ActivatedRoute, 
+        private route: ActivatedRoute,
         private location: Location
     ) { }
 
-    ngOnInit() { 
-        this.route.params.forEach((params: Params) => { // Le sacamos a los parametros recibidos el id per se con el for
-            let id = +params['id']; // El simbolo de suma antes de params convierte el id string a un int
-        
-        this.shoutService.getShout(id).then(shout => this.shout = shout);
-        })
+    ngOnInit() {
+      this.route.params.forEach((params: Params) => { // Le sacamos a los parametros recibidos el id per se con el for
+          let id = params['id']; // El simbolo de suma antes de params convierte el id string a un int
+
+          this.shoutService.getShout(id)
+                           .subscribe((data) => this.shout = data[0]);
+      });
     }
 
-
     save(): void{
-        this.shoutService.update(this.shout).then(() => this.goBack());
+
     }
 
 

@@ -12,15 +12,15 @@ import {Departamento, DEPS} from '../deps';
 })
 
 export class CreateShoutComponent implements OnInit{
-    
+
     @Input() shout = new Shouts();
     departamentos = DEPS;
 
-    
+
     ngOnInit(){
-        
+
     }
-    
+
     constructor(
         private shoutService: ShoutsService,
         private router: Router,
@@ -28,10 +28,10 @@ export class CreateShoutComponent implements OnInit{
     ){}
 
     create(){
-        
+
         this.shout.rating = 0;
         console.log(JSON.stringify(this.shout));
-        this.shoutService.create(this.shout).then( () => this.goBack() );
+        this.shoutService.create(this.shout).subscribe( (data) => console.log(data) );
 
     }
 

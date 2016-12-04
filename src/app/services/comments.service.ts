@@ -6,9 +6,9 @@ import {Headers, Http} from '@angular/http';
 @Injectable()
 export class CommentsService {
 
-    private commentsURL = 'app/comments';
+    private commentsURL = 'http://api.neighbornet.io/comment';
     private headers = new Headers({"Content-Type": "application/json"});
-    
+
     constructor(
         private http: Http
     ) { }

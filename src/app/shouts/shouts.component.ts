@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {Shouts} from '../shouts';
-import {Router} from '@angular/router';
-import { ShoutsService} from '../services/shouts.service';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { NgForm }    from '@angular/forms';
 import {Location} from '@angular/common';
+import {Observable} from 'rxjs/Rx';
+import {Router} from '@angular/router';
+
+import {Shouts} from '../shouts';
+import { ShoutsService} from '../services/shouts.service';
+
 
 @Component({
     selector: 'shout-component',
@@ -11,8 +15,9 @@ import {Location} from '@angular/common';
 })
 export class ShoutsComponent implements OnInit {
 
-    private shoutsURL = "app/shouts";
-    shouts = new Array<Shouts>();
+    errorMessage: string;
+    shouts: Shouts[];
+    mode = 'Observable';
 
     constructor(
         private shoutService: ShoutsService,
@@ -20,11 +25,12 @@ export class ShoutsComponent implements OnInit {
         private location: Location
     ) { }
 
-    ngOnInit() { 
-        this.getShouts();
+    ngOnInit() {
+        this.getShoutss();
     }
 
-    getShouts(): void{
-        this.shoutService.getShouts().then(shouts => this.shouts = shouts);
+    getShoutss() {
+      this.shoutService.getShouts()
+                       .subscribe((data) => this.shouts = data, err => console.log(err));
     }
 }
