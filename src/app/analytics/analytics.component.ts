@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Departamento, DEPS} from '../deps';
-
+ 
 
 @Component({
     selector: 'analytics',
@@ -12,11 +12,11 @@ export class AnalyticsComponent {
 
   dept: Departamento[];
   i: number = 0; 
-  selectedOption: number;
+  @Input() selectedOption: number;
   departamentos: string[] = DEPS;
 
   insertValue(departamentos: string[], dept: Departamento[], i: number): Departamento[] {
-    for (var item of departamentos){
+    for (var item of departamentos) {
       dept[i].name = item;
       i++
     }
@@ -25,9 +25,8 @@ export class AnalyticsComponent {
 
   chooseOption(index: number){
     this.selectedOption = index;
+    console.log(this.selectedOption);
   }
-
-
 
 
 }
