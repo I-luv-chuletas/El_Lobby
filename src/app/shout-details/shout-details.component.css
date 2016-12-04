@@ -6,6 +6,11 @@
   word-spacing: 2px;
 }
 
+.text-center {
+  font-size: 16px;
+  position: inline;
+}
+
 .shoutContainer {
   border: none;
 }
