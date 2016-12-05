@@ -27,6 +27,8 @@ export class ShoutDetailsComponent implements OnInit {
           this.shoutService.getShout(id)
                            .subscribe((data) => this.shout = data[0]);
       });
+
+      console.log(this.shout);
     }
 
     save(): void{
