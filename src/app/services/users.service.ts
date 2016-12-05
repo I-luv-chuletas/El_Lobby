@@ -1,20 +1,55 @@
 import { Injectable } from '@angular/core';
-import {Headers, Http} from '@angular/http';
 import {Users} from '../users';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Rx';
 
 
 @Injectable()
 export class UsersService {
 
-    private usersURL ='app/users';
-    private headers  = new Headers({"Content-Type" : "application.json"});
+    private usersURL ='http://api.neighbornet.io/api/users';
+    private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
+    private options = new RequestOptions({ headers: this.headers });
 
-    constructor(
-        private http: Http
-    ) { }
+    constructor(private http: Http) { }
 
 
-    
+  getProfile() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let authToken = localStorage.getItem('auth_token');
+    headers.append('Authorization', `Bearer ${authToken}`);
 
+    return this.http
+      .get('/profile', { headers })
+      .map(res => res.json());
+  }
+
+    getUsers() : Observable<[]> {
+
+        // ...using get request
+        return this.http.get(this.usersURL)
+                       // ...and calling .json() on the response to return data
+                        .map((res:Response) => res.json())
+                        //...errors if any
+                        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+    }
+
+    getCats() {
+      return this.http.get(this.usersURL).map(res => res.json());
+    }
+
+    addUser(usr) {
+      return this.http.post(this.usersURL, JSON.stringify(usr), this.options);
+    }
+
+    editUser(usr) {
+      return this.http.put(this.usersURL`/${usr._id}`, JSON.stringify(usr), this.options);
+    }
+
+    deleteCat(usr) {
+      return this.http.delete(this.usersURL`/${usr._id}`, this.options);
+    }
 }
-

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response, RequestOptions} from '@angular/http';
-import { Shouts } from '../shouts';
+import { Hits } from '../hits';
 import {Observable} from 'rxjs/Rx';
 
 
 @Injectable()
 export class AnalyticsService {
 
-    private shoutsURL = "http://api.neighbornet.io/shout";
+    private hitsURL = "http://api.neighbornet.io/hits";
     private headers   = new Headers({"Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });
 
@@ -15,16 +15,23 @@ export class AnalyticsService {
         private http:Http
     ) { }
 
-    getCommentCount(id: string): Observable<Shouts[]> {
-        return this.http.get(`${this.shoutsURL}/${id}`)
+    getHits(): Observable<Hits[]> {
+        return this.http.get(this.hitsURL)
+                .map((res:Response) => res.json())
+                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
+    getHit(id: string): Observable<Hits> {
+        return this.http.get(`${this.hitsURL}/${id}`)
                .map((res:Response) => res.json())
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    getApprovalPercentage(id: string): Observable<Shouts[]> {
-        return this.http.get(`${this.shoutsURL}/${id}`)
-               .map((res:Response) => res.json())
-               .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    create(hit: Hits): Observable<Hits>{
+      let bodyString = JSON.stringify(hit);
+
+      return this.http.post(this.hitsURL, bodyString, this.options).map(this.extractData) // ...and calling .json() on the response to return data
+                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     private extractData(res: Response) {
