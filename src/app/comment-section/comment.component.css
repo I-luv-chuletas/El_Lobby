@@ -8,3 +8,11 @@
     margin: auto;
     border: none;
 }
+
+i:hover {
+    cursor: pointer;
+}
+.row {
+    word-spacing: 2px;
+    font-size: 16px;
+}

@@ -11,28 +11,29 @@ import {Departamento, DEPS} from '../deps';
     template: require('./create-shout.component.html')
 })
 
-export class CreateShoutComponent implements OnInit{
-    
-    @Input() shout = new Shouts();
-    departamentos = DEPS;
+export class CreateShoutComponent implements OnInit {
 
-    
-    ngOnInit(){
-        
+    //@Input() shout = new Shouts();
+    departamentos = DEPS;
+    shout = new Shouts();
+    submitted = false;
+
+    ngOnInit() {
+
     }
-    
+
     constructor(
         private shoutService: ShoutsService,
         private router: Router,
         private location: Location
     ){}
 
-    create(){
-        
-        this.shout.rating = 0;
-        console.log(JSON.stringify(this.shout));
-        this.shoutService.create(this.shout).then( () => this.goBack() );
+    create(model: Shouts, isValid: boolean){
 
+      if(isValid)
+        this.shoutService.create(model).subscribe( (model) => console.log(model) );
+
+      this.submitted = true;
     }
 
     goBack():void {
