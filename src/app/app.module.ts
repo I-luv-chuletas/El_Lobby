@@ -50,8 +50,8 @@ import { SolutionsComponent } from './solutions/solutions.component';
         FormsModule,
         HttpModule,
         JsonpModule,
-        routing,
-        InMemoryWebApiModule.forRoot(InMemoryDataService)
+        routing
+        // InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
     providers: [
         appRoutingProviders,
