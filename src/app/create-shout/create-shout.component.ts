@@ -11,13 +11,14 @@ import {Departamento, DEPS} from '../deps';
     template: require('./create-shout.component.html')
 })
 
-export class CreateShoutComponent implements OnInit{
+export class CreateShoutComponent implements OnInit {
 
-    @Input() shout = new Shouts();
+    //@Input() shout = new Shouts();
     departamentos = DEPS;
+    shout = new Shouts();
+    submitted = false;
 
-
-    ngOnInit(){
+    ngOnInit() {
 
     }
 
@@ -27,12 +28,12 @@ export class CreateShoutComponent implements OnInit{
         private location: Location
     ){}
 
-    create(){
+    create(model: Shouts, isValid: boolean){
 
-        this.shout.rating = 0;
-        console.log(JSON.stringify(this.shout));
-        this.shoutService.create(this.shout).subscribe( (data) => console.log(data) );
+      if(isValid)
+        this.shoutService.create(model).subscribe( (model) => console.log(model) );
 
+      this.submitted = true;
     }
 
     goBack():void {

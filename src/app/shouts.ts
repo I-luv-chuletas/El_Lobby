@@ -1,9 +1,8 @@
 export class Shouts {
 
-    constructor(values: Object = {}) {
-      Object.assign(this, values);
-    }
-
+  constructor(values: Object = {}) {
+    Object.assign(this, values);
+  } 
     id: number;
     rating: number;
     userID: string;
