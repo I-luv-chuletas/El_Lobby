@@ -34,7 +34,7 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
 
 
 @NgModule({
-    declarations: [
+  declarations: [
         AppComponent,
         HomeComponent,
         AboutComponent,
@@ -50,21 +50,21 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
     DepartmentAnalysisComponent,
     DepartmentAnalysisComponent,
     ShoutsAnalysisComponent
-],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        JsonpModule,
-        routing,
-    ],
-    providers: [
-        appRoutingProviders,
-        CommentsService,
-        ShoutsService,
-        Departamento
-        ],
-    bootstrap: [AppComponent]
+  ],
+  imports: [
+      BrowserModule,
+      FormsModule,
+      HttpModule,
+      JsonpModule,
+      routing,
+  ],
+  providers: [
+    appRoutingProviders,
+    CommentsService,
+    ShoutsService,
+    Departamento
+  ],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {
