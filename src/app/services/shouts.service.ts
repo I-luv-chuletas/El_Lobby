@@ -8,6 +8,12 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ShoutsService {
+// <<<<<<< HEAD
+    
+//     private shoutsURL = " http://api.neighbornet.io/shout";
+//     private headers   = new Headers({"Content-Type": "application/json" });
+    
+// =======
 
     private shoutsURL = "http://api.neighbornet.io/shout";
     private headers   = new Headers({"Content-Type": "application/json" });
@@ -15,8 +21,16 @@ export class ShoutsService {
 
     constructor(
         private http:Http
-    ) { }
+    ) { this.headers.append('Access-Control-Allow-Origin', '*'); }
 
+// <<<<<<< HEAD
+//     getShouts(): Promise<Shouts[]> {
+//         // console.log(this.shoutsURL);
+//         return this.http.get(this.shoutsURL).toPromise().then(response => response.json().data as Shouts[])
+//         .catch(this.handleError);
+
+//     } 
+// =======
     getShouts(): Observable<Shouts[]> {
         return this.http.get(this.shoutsURL)
                 .map((res:Response) => res.json())
