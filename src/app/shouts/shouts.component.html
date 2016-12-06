@@ -1,5 +1,6 @@
+<h1>Shouts Menu</h1>
 <div class="general-shouts">
     <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
-            <li><h4>{{shout.title}}</h4></li>
+            <li><h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span></li>
     </ul>
 </div>

@@ -21,7 +21,7 @@ export class ShoutsService {
 
     constructor(
         private http:Http
-    ) { this.headers.append('Access-Control-Allow-Origin', '*'); }
+    ) {}
 
 // <<<<<<< HEAD
 //     getShouts(): Promise<Shouts[]> {
@@ -53,6 +53,13 @@ export class ShoutsService {
                          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+   
+    
+    metadataUpdating(){
+
+
+    }
+
 
     create(shout: Shouts): Observable<Shouts>{
       shout.rating = 0;
@@ -63,8 +70,9 @@ export class ShoutsService {
                        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+   
     private extractData(res: Response) {
-        let body;
+        let body: JSON;
 
         // check if empty, before call json
         if (res.text()) {

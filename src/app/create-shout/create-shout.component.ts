@@ -28,13 +28,22 @@ export class CreateShoutComponent implements OnInit {
         private location: Location
     ){}
 
-    create(model: Shouts, isValid: boolean){
+    // create(model: Shouts, isValid: boolean){
 
-      if(isValid)
-        this.shoutService.create(model).subscribe( (model) => console.log(model) );
+    //   if(isValid)
+    //     this.shoutService.create(model).subscribe( (model) => console.log(model) );
 
-      this.submitted = true;
+    //   this.submitted = true;
+    // }
+
+    create(isValid: boolean): void{
+
+        if(isValid){
+
+        }
+
     }
+
 
     goBack():void {
 
