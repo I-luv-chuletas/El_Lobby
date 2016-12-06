@@ -3,6 +3,7 @@ import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
+import { AnalyticsService } from '../services/likes.service';
 
 
 @Component({
