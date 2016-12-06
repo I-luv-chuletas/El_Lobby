@@ -1,12 +1,20 @@
 <h1>Login</h1>
-    <form class="form-horizontal">
-          <div class="form-login">
-              <input [(ngModel)]="model.userName" type="text" class="form-control" placeholder="Username" name="username" required>
-              <input [(ngModel)]="model.password" type="password" class="form-control" placeholder="Password" name="password" required>
-             <button class="btn btn-success pull-right" (click)="login(username, password)">Login</button>
-          </div>
+    <form class="form-horizontal"  [formGroup]="loginForm" novalidate (ngSubmit)="login(loginForm.value, loginForm.valid)">
+        <div class="form-login">
+            <input formControlName="email" type="text" class="form-control" placeholder="Username">
+            <small [hidden]="loginForm.controls.email.valid || (loginForm.controls.email.pristine && !submitted)">
+                Email is required.
+            </small>
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+            <small [hidden]="loginForm.controls.password.valid || (loginForm.controls.password.pristine && !submitted)">
+                Password is required.
+            </small>
+            <p [hidden]="(!invalidCred)" class="text-danger">
+                Password or Email incorrect.
+            </p>
+          <button class="btn btn-success pull-right" [disabled]="!loginForm.valid" type="submit">Login</button>
+      </div>
     </form>
 
     <button class="btn btn-link" (click)="revealSignup()">Sign up</button>
     <app-signup *ngIf="signup"></app-signup>
-    
