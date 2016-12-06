@@ -34,6 +34,13 @@ export class AnalyticsService {
                        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+    //Returns integer of likes count per shout
+    getHitCount(id: string): Observable<number> {
+        return this.http.get(`${this.hitsURL}/all/${id}`)
+               .map(this.extractData)
+               .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
     private extractData(res: Response) {
         let body;
 
