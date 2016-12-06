@@ -12,12 +12,14 @@ import { ShoutsService } from '../services/shouts.service';
 })
 export class ShoutDetailsComponent implements OnInit {
 
-    @Input() shout: Shouts;
+    @Input() shout = new Shouts();
+    temp: Shouts[];
 
     constructor(
         private shoutService: ShoutsService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        
     ) { }
 
     ngOnInit() {
@@ -25,11 +27,20 @@ export class ShoutDetailsComponent implements OnInit {
           let id = params['id']; // El simbolo de suma antes de params convierte el id string a un int
 
           this.shoutService.getShout(id)
-                           .subscribe((data) => this.shout = data[0]);
+                           .subscribe(shout => this.temp = shout, );
+          
+        //   this.shout = JSON.parse(JSON.stringify(this.temp))
       });
-
-      console.log(this.shout);
+      
+      
     }
+
+
+    test(){
+        console.log(this.temp);
+        this.shout = JSON.parse(JSON.stringify(this.temp))
+    }
+
 
     save(): void{
 
