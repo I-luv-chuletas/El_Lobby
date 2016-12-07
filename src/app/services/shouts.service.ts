@@ -38,7 +38,7 @@ export class ShoutsService {
     }
 
 
-    getShout(id: string): Observable<Shouts[]> {
+    getShout(id: string): Observable<Shouts> {
         return this.http.get(`${this.shoutsURL}/${id}`)
                .map((res:Response) => res.json())
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -67,7 +67,7 @@ export class ShoutsService {
       let bodyString = JSON.stringify(shout);
 
       return this.http.post(this.shoutsURL, bodyString, this.options).map(this.extractData) // ...and calling .json() on the response to return data
-                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+                       .catch((error:any) => Observable.throw(console.log(error.status) || 'Server error'));
     }
 
    

@@ -4,7 +4,7 @@
   <!--body-->
   <div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
     <div class="col-sm-7">
-      <form #f="ngForm" name="main-form" class="form-horizontal" (ngSubmit)="create(f.value, f.valid)" novalidate>
+      <form #f="ngForm" name="main-form" class="form-horizontal" (ngSubmit)="create(f.value, f.valid)" novalidate >
         <div name="title-form" class="form-group">
           <label for="titulo-alegato">Title: </label>
           <input class="form-control" [(ngModel)]="shout.title" name="title" #title="ngModel" placeholder="Enter your title.." required minlength="5"/>
@@ -41,7 +41,7 @@
             </label>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary pull-right btn-lg" (click)="create(); goBack()">Create new Shout!</button>
+        <button type="submit" class="btn btn-primary pull-right btn-lg">Create new Shout!</button>
       </form>
     </div>
   </div>
