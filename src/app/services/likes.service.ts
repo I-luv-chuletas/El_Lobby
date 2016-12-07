@@ -79,7 +79,7 @@ export class LikesService {
     }
 
     private extractData(res: Response) {
-        let body;
+        let body: JSON;
 
         // check if empty, before call json
         if (res.text()) {

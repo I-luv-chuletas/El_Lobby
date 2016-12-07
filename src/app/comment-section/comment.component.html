@@ -7,7 +7,7 @@
             <div class="form-comment">
                 <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Name" name="name">
                 <input [(ngModel)]="model.content" type="text" class="form-control" placeholder="Write your opinion!" name="content">
-               <button class="btn btn-success pull-right" (click)="CommentsService.addComment(model)">Post</button>
+               <button class="btn btn-success pull-right" (click)="addComment(model)">Post</button>
             </div>
         </form>
     </div>
@@ -22,6 +22,7 @@
                     <p class="list-group-item-text"><b>{{comment.userID}} </b></p>
                     <p class="list-group-item-text">{{comment.message}}</p>
 
+                    <p> Ratings: {{comment.rating}} </p>
                 </form>
                 <like-widget [id]="comment.shoutID"></like-widget>
             </div>
