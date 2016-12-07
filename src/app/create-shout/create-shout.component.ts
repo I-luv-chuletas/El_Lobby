@@ -36,12 +36,10 @@ export class CreateShoutComponent implements OnInit {
     //   this.submitted = true;
     // }
 
-    create(isValid: boolean): void{
-
-        if(isValid){
-
-        }
-
+    create(): void{
+        this.shoutService.create(this.shout);
+        console.log(JSON.stringify(this.shout) + " .create() shout-details");
+        
     }
 
 

@@ -26,6 +26,11 @@ export class DashboardComponent implements OnInit {
                          shouts => this.shouts = shouts,
                          error =>  this.errorMessage = <any>error);
         console.log('Tamo exotico:\n');
+        console.log(JSON.stringify(this.shouts));
+    }
+
+
+    verga(){
         console.log(this.shouts);
     }
 
