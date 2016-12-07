@@ -27,4 +27,9 @@ export class ShoutsComponent implements OnInit {
     getShouts(): void{
         this.shoutService.getShouts().then(shouts => this.shouts = shouts);
     }
+
+    showDetails(shout: Shouts): void {
+        let link = ['/detail', shout.id];
+        this.router.navigate(link);
+    }
 }

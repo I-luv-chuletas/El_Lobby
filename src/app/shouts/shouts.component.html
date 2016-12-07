@@ -1,5 +1,6 @@
-<div class="general-shouts">
-    <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted">
-            <li><h4>{{shout.title}}</h4></li>
-    </ul>
+<h1>Shouts!</h1>
+<div class="general-shouts" *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" 
+[ngClass]="{ odd: odd, even: even }" (click)="showDetails(shout)" 
+class="posted">
+    <h4>{{shout.title}}</h4>
 </div>
