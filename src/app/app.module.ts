@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
@@ -19,6 +19,8 @@ import {Departamento} from './deps';
 // Services
 import {ShoutsService} from './services/shouts.service'
 import {CommentsService} from './services/comments.service';
+import {ValidationService} from './services/validation.service';
+import {AuthService} from './services/auth.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -52,6 +54,7 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
     ShoutsAnalysisComponent
   ],
   imports: [
+      ReactiveFormsModule,
       BrowserModule,
       FormsModule,
       HttpModule,
@@ -60,8 +63,10 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
   ],
   providers: [
     appRoutingProviders,
+    ValidationService,
     CommentsService,
     ShoutsService,
+    AuthService,
     Departamento
   ],
   bootstrap: [AppComponent]

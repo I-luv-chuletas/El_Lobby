@@ -26,7 +26,7 @@ export class UsersService {
       .map(res => res.json());
   }
 
-    getUsers() : Observable<[]> {
+    getUsers() : Observable<Users[]> {
 
         // ...using get request
         return this.http.get(this.usersURL)
@@ -41,15 +41,15 @@ export class UsersService {
       return this.http.get(this.usersURL).map(res => res.json());
     }
 
-    addUser(usr) {
+    addUser(usr: Users) {
       return this.http.post(this.usersURL, JSON.stringify(usr), this.options);
     }
 
-    editUser(usr) {
-      return this.http.put(this.usersURL`/${usr._id}`, JSON.stringify(usr), this.options);
+    editUser(usr: Users) {
+      return this.http.put(`${this.usersURL}/${usr.id}`, JSON.stringify(usr), this.options);
     }
 
-    deleteCat(usr) {
-      return this.http.delete(this.usersURL`/${usr._id}`, this.options);
+    deleteCat(usr: Users) {
+      return this.http.delete(`${this.usersURL}/${usr.id}`, this.options);
     }
 }

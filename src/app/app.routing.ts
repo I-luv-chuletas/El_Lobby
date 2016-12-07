@@ -15,6 +15,7 @@ import {SolutionsComponent} from './solutions/solutions.component';
 
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
+    { path: 'home', component: DashboardComponent},
     { path: 'about', component: AboutComponent},
     { path: 'create-shout', component: CreateShoutComponent},
     { path: 'detail/:id', component: ShoutDetailsComponent},
