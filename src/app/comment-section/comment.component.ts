@@ -3,8 +3,6 @@ import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
-import { AnalyticsService } from '../services/likes.service';
-
 
 @Component({
     selector: 'comment-section',
@@ -17,9 +15,11 @@ export class CommentsComponent implements OnInit {
     comments: Comments[];
 
     model = new Comments();
+    public likes: number;
+    public dislikes: number;
 
     constructor(
-        private commentService: CommentsService
+        private commentService: CommentsService,
     ) { }
 
     ngOnInit() {
@@ -27,9 +27,4 @@ export class CommentsComponent implements OnInit {
         // comments reales de acuerdo a que 'shout' es.
         this.commentService.getComments().subscribe((data) => this.comments = data, err => console.log(err));
     }
-
-    rate (rating: number) {
-        console.log(JSON.stringify(rating))
-    }
-
 }
