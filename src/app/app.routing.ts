@@ -24,9 +24,9 @@ const appRoutes: Routes = [
     { path: 'detail/:id', component: ShoutDetailsComponent},
     { path: 'shouts', component: ShoutsComponent},
     { path: 'analytics', component: AnalyticsComponent},
-    { path: 'login', component: LoginComponent},
+    { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
     { path: 'logout', component: LogoutComponent},
-    { path: 'solutions', component:SolutionsComponent}
+    { path: 'solutions', component: SolutionsComponent}
 ];
 
 export const appRoutingProviders: any[] = [];

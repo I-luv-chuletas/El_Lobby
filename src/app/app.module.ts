@@ -26,6 +26,7 @@ import {ValidationService} from './services/validation.service';
 import {AuthService} from './services/auth.service';
 import {LikesService} from './services/likes.service';
 import {ClikesService} from './services/clikes.service';
+import {HitsService} from './services/hits.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -78,6 +79,7 @@ import { OrderBy } from './orderBy.pipe';
   providers: [
     AuthGuard,
     LoginGuard,
+    HitsService,
     LikesService,
     ClikesService,
     appRoutingProviders,
