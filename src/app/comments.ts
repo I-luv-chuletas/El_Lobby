@@ -8,7 +8,7 @@ export class Comments {
     shoutID: string;
     solution: string;
     officialReply: string;
-    userId: number;
+    userId: string;
     text: string;
     rating: number;
 }
