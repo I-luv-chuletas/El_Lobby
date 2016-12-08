@@ -6,7 +6,7 @@ import { Comments } from '../comments';
 @Component({
   selector: 'flag-widget',
   template: `
-            <span [class.text-success]="isSolution()"><i class="glyphicon glyphicon-certificate text-success btn" (click)="flagAsSolution()"></i> {{this.comm.solution}}</span>
+            <span [class.text-success]="isSolution()"><i [class.text-success]="isSolution()" class="glyphicon glyphicon-certificate btn" (click)="flagAsSolution()"></i> {{this.comm.solution}}</span>
             `
 })
 export class FlagWidgetComponent implements OnInit {
@@ -47,6 +47,6 @@ export class FlagWidgetComponent implements OnInit {
   }
 
   isSolution():boolean {
-    return this.comm.solution === 'Solution!';
+    return this.comm.solution !== "";
   }
 }
