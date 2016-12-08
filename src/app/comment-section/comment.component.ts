@@ -28,6 +28,5 @@ export class CommentsComponent implements OnInit {
         // Para efectos del hackathon lo dejaremos así, para aplicacioón real necesitamos que envie el id para recoger los
         // comments reales de acuerdo a que 'shout' es.
         this.commentService.getComments().subscribe((data) => this.comments = data, err => console.log(err));
-        });
     }
 }
