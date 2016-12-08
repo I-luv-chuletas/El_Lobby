@@ -3,7 +3,8 @@ import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
-import {OrderBy} from '../orderBy.pipe'; 
+import {OrderBy} from '../orderBy.pipe';
+import {AuthService} from '../services/auth.service' 
 
 @Component({
     selector: 'comment-section',
@@ -14,10 +15,12 @@ import {OrderBy} from '../orderBy.pipe';
 export class CommentsComponent implements OnInit {
 
     @Input() shoutId: string;
+    @Input() model = new Comments();
+
     comments: Comments[];
     forPipeRating: number[];
 
-    model = new Comments();
+    
     public likes: number;
     public dislikes: number;
     
@@ -25,6 +28,7 @@ export class CommentsComponent implements OnInit {
 
     constructor(
         private commentService: CommentsService,
+        private authService: AuthService
     ) { }
 
     ngOnInit() {
@@ -32,4 +36,15 @@ export class CommentsComponent implements OnInit {
         // comments reales de acuerdo a que 'shout' es.
         this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));
     }
+
+
+    addComment(): void {
+        this.model.shoutID = this.shoutId; 
+        this.model.userId = localStorage.getItem('userID');
+        console.log("Printeando en addComment()" + this.model);
+        this.commentService.addComment(this.model).subscribe(
+            (data) => this.model = data, error => console.log(error)
+        );
+    }
+
 }

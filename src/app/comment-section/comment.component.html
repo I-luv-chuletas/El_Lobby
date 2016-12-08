@@ -1,12 +1,13 @@
-<h3>Discussion Thread: </h3>
+<h3>Discussion Thread: {{shoutId}}</h3>
+
 
 <div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
     <div class="col-sm-7">
 
         <form class="form-horizontal">
             <div class="form-comment">
-                <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Name" name="name">
-                <input [(ngModel)]="model.content" type="text" class="form-control" placeholder="Write your opinion!" name="content">
+            <!--<input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Name" name="username">-->
+                <input [(ngModel)]="model.text" type="text" class="form-control" placeholder="Write your opinion!" name="text">
                <button class="btn btn-success pull-right" (click)="addComment(model)">Post</button>
             </div>
         </form>

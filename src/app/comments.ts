@@ -4,11 +4,11 @@ export class Comments {
     Object.assign(this, values);
   }
 
-    id: number;
+    id: string;
     shoutID: string;
     solution: string;
     officialReply: string;
-    userId: number;
+    userId: string;
     text: string;
     rating: number;
 }
