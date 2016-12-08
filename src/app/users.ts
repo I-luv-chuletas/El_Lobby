@@ -14,5 +14,6 @@ export class Users {
     priviliges: number;
     departmentID: number;
     departmentName: string;
+    subscribedShouts: number[];
 
 }

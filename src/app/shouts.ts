@@ -3,7 +3,7 @@ export class Shouts {
   constructor(values: Object = {}) {
     Object.assign(this, values);
   } 
-    id: number;
+    id: string;
     rating: number;
     userID: string;
     taggedDepts: string; // Departamentos mencionados/tagueados en

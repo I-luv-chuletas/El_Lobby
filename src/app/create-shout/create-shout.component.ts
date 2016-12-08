@@ -43,20 +43,22 @@ export class CreateShoutComponent implements OnInit {
 
     create(model: Shouts, isValid: boolean): void{
         this.shoutService.create(model).subscribe(
-            postedShout =>  console.log(postedShout),
+            postedShout =>  this.shout = postedShout,
             error => this.errorMessage = error.status 
         );
+
+       console.log("Creating shout "+ JSON.stringify(this.shout)); 
+       this.goToShout(this.shout.id);
         
-       this.goBack();
-        
-        console.log(JSON.stringify(this.shout) + "shout-details .create()");
-        console.log(this.errorMessage);
+        // console.log(JSON.stringify(this.shout) + "shout-details .create()");
+        // console.log(this.errorMessage);
     }
 
 
-    goBack():void {
+    goToShout(id: String):void {
 
-        let link = ['']
+        
+        let link = ['detail/', id];
         this.router.navigate(link);
     }
 }

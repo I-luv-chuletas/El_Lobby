@@ -6,7 +6,9 @@ export class Comments {
 
     id: number;
     shoutID: string;
+    solution: string;
+    officialReply: string;
     userId: number;
-    content: string;
+    text: string;
     rating: number;
 }

@@ -3,6 +3,8 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
 import { ShoutsService } from '../services/shouts.service';
+import { CommentsService } from '../services/comments.service';
+import { Comments } from '../comments';
 
 @Component({
     selector: 'shout-detail',
@@ -14,13 +16,15 @@ export class ShoutDetailsComponent implements OnInit {
 
     // @Input() shout = new Shouts();
     shout:Shouts;
-    temp: Shouts;
+
+    temp: Shouts[];
+    commentSection = new Array<Comments>();
 
     constructor(
+        private commentService: CommentsService,
         private shoutService: ShoutsService,
         private route: ActivatedRoute,
-        private location: Location,
-        
+        private location: Location
     ) { }
 
     ngOnInit() {
@@ -29,6 +33,10 @@ export class ShoutDetailsComponent implements OnInit {
 
           this.shoutService.getShout(id)
                            .subscribe(sentShout => this.shout = sentShout );
+          
+          this.commentService.getComments(id).subscribe(
+              comments => this.commentSection = comments
+          );
           
         //   this.shout = JSON.parse(JSON.stringify(this.temp))
       });
