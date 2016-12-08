@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import { ShoutsService } from '../services/shouts.service';
 import { Shouts } from '../shouts';
 import { Router } from '@angular/router';
@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'lobby-dashboard',
     template: require('./dashboard.component.html'),
-    styles: [require("./dashboard.component.css")]
+    styles: [require("./dashboard.component.css")],
 })
 
 export class DashboardComponent implements OnInit {
 
-    shouts: Shouts[];
+    shouts: Shouts;
     mode = 'Observable';
     errorMessage: string;
 

@@ -15,8 +15,12 @@ export class ShoutDetailsComponent implements OnInit {
 
     // @Input() shout = new Shouts();
     shout:Shouts;
+<<<<<<< HEAD
     temp: Shouts[];
     commentSection: Comment[];
+=======
+    temp: Shouts;
+>>>>>>> 43e2a31b3dd6f1743e616b794b5fd5a87e684c23
 
     constructor(
         private commentService: CommentsService,
