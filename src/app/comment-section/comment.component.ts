@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, AfterContentInit, DoCheck, ApplicationRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck, ApplicationRef } from '@angular/core';
 import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
@@ -17,7 +17,9 @@ import {Location} from '@angular/common';
 export class CommentsComponent implements OnInit{
 
     @Input('shout') shoutId: any;
+    @Input() tes = new Comments();
     @Input() model = new Comments();
+    @Output() onNewComment = new EventEmitter<Comments>();
 
     comments: Comments[];
 
@@ -60,14 +62,17 @@ export class CommentsComponent implements OnInit{
         this.model.shoutID = this.shoutId;
         this.model.userID = localStorage.getItem('userID');
 
-        console.log("Printeando en addComment()" + this.model);
+        console.log("Printeando en addComment()" + JSON.stringify(this.model));
       
         this.model.userID = localStorage.getItem('userID');
         this.commentService.addComment(this.model).subscribe(
-            (data) => this.model = data, error => console.log(error)
-        );
-
-        this.refresh();
+            (data) => this.model = data, error => console.log(error),
+            () => {
+                this.onNewComment.emit(this.model);
+                // this.refresh();
+            }
+        );  
+       
     }
 
     takeShout(id: string){
@@ -76,7 +81,7 @@ export class CommentsComponent implements OnInit{
 
     
     refresh(){
-        let link = ['details/', this.shoutId];
+        let link = ['detail/', this.shoutId];
         this.router.navigate(link);
     }
 

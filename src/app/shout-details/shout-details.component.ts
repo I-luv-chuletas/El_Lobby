@@ -23,7 +23,7 @@ export class ShoutDetailsComponent implements OnInit {
 
     temp: Shouts[];
     commentSection = new Array<Comments>();
-    idPalChild: string;
+    
 
 
     constructor(
@@ -62,20 +62,16 @@ export class ShoutDetailsComponent implements OnInit {
     }
 
 
-    // ngAfterViewInit(){
-    //     console.log("afterContentInit" + this.temp);
-    //     this.shout = JSON.parse(JSON.stringify(this.temp))
-    // }
-
-
     test(){
         console.log(this.temp);
         this.shout = JSON.parse(JSON.stringify(this.temp))
     }
 
 
-    save(): void{
-
+    onNewComment(comment: Comments) {
+        console.log("padrastro pepeeeeeeeeeeee");
+        this.commentSection.push(comment);
+        console.log(JSON.stringify(this.commentSection));
     }
 
 

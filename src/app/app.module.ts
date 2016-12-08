@@ -27,16 +27,20 @@ import {AuthService} from './services/auth.service';
 import {LikesService} from './services/likes.service';
 import {ClikesService} from './services/clikes.service';
 import {HitsService} from './services/hits.service';
+import {UsersService} from './services/users.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 //import {InMemoryDataService} from './services/in-memory-data.service';
 
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SolutionsComponent } from './solutions/solutions.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { LoginGuard } from './_guards/login.guard';
+import { AdminGuard } from './_guards/admin.guard';
 
 // import { DepartmentAnalysisComponent } from './home/department-analysis/department-analysis.component';
 import { DepartmentAnalysisComponent } from './department-analysis/department-analysis.component';
@@ -49,6 +53,7 @@ import { OrderBy } from './orderBy.pipe';
   declarations: [
         AppComponent,
         HomeComponent,
+        AdminComponent,
         LikeWidgetComponent,
         CLikeWidgetComponent,
         AboutComponent,
@@ -58,6 +63,7 @@ import { OrderBy } from './orderBy.pipe';
         ShoutsComponent,
         ShoutDetailsComponent,
         AnalyticsComponent,
+        UserComponent,
         LoginComponent,
         LogoutComponent,
         SignupComponent,
@@ -66,7 +72,6 @@ import { OrderBy } from './orderBy.pipe';
         DepartmentAnalysisComponent,
         ShoutsAnalysisComponent,
         OrderBy
-
   ],
   imports: [
       ReactiveFormsModule,
@@ -78,10 +83,12 @@ import { OrderBy } from './orderBy.pipe';
   ],
   providers: [
     AuthGuard,
+    AdminGuard,
     LoginGuard,
     HitsService,
     LikesService,
     ClikesService,
+    UsersService,
     appRoutingProviders,
     ValidationService,
     CommentsService,

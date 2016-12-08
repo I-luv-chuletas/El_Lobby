@@ -25,6 +25,7 @@ export class AuthService {
                           localStorage.setItem('currentUser', JSON.stringify({ username: email, token: response.json().auth.id }));
                           localStorage.setItem('userID', response.json().id);
                           localStorage.setItem('email', email);
+                          localStorage.setItem('priv', response.json().priv);
                           // return true to indicate successful login
                           return true;
                       } else {
@@ -39,8 +40,6 @@ export class AuthService {
   signup ahoramismo no tiene nada de lo que dijimos que tenia, hay que hacer eso ya.
 */
   signup(email: string, password:string): Observable<boolean> {
-    console.log("Estamos en authservice pingolo: "+ email + " " + password)
-
     return this.http.post(`${this.authURL}/register`, JSON.stringify({email: email, password: password}), this.options)
       .map((response: Response) => {
 

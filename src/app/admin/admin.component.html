@@ -1,0 +1,9 @@
+<div style="padding:7px;">
+  <h1> Registered Users </h1>
+
+  <ul id="usersDiv" *ngFor="let user of users; let index=index; let odd=odd; let even=even;" (click)="showDetails(user)"
+        class="list-group"
+        [ngClass]="{ odd: odd, even: even }">
+        <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>  {{user.anon}}</li>
+  </ul>
+</div>

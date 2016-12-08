@@ -2,15 +2,17 @@ import {ModuleWithProviders}  from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { AuthGuard } from './_guards/auth.guard';
 import { LoginGuard } from './_guards/login.guard';
+import { AdminGuard } from './_guards/admin.guard';
 
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-// import {CommentComponent} from './comments/comment.component';
+import {AdminComponent} from './admin/admin.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 import {ShoutsComponent} from './shouts/shouts.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
+import {UserComponent} from './user/user.component';
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
 import {SolutionsComponent} from './solutions/solutions.component';
@@ -26,6 +28,8 @@ const appRoutes: Routes = [
     { path: 'analytics', component: AnalyticsComponent},
     { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
     { path: 'logout', component: LogoutComponent},
+    { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]},
+    { path: 'user/:id', component: UserComponent},
     { path: 'solutions', component: SolutionsComponent}
 ];
 
