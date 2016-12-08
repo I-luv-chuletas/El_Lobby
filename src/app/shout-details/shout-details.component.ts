@@ -55,7 +55,7 @@ export class ShoutDetailsComponent implements OnInit {
         if(localStorage.getItem('userID')) {
           this.hit.userID = localStorage.getItem('userID');
           this.hit.shoutID = this.shoutId;
-          this.hit.dept = this.shout.taggedDepts;
+          this.hit.dept = this.shout.departmento;
 
           this.hitsService.create(this.hit).subscribe();
         }
