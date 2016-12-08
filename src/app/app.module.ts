@@ -28,6 +28,7 @@ import {LikesService} from './services/likes.service';
 import {ClikesService} from './services/clikes.service';
 import {HitsService} from './services/hits.service';
 import {UsersService} from './services/users.service';
+import {SearchService} from './services/search.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -45,6 +46,7 @@ import { AdminGuard } from './_guards/admin.guard';
 // import { DepartmentAnalysisComponent } from './home/department-analysis/department-analysis.component';
 import { DepartmentAnalysisComponent } from './department-analysis/department-analysis.component';
 import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
+
 import { OrderBy } from './orderBy.pipe';
 
 
@@ -72,7 +74,7 @@ import { OrderBy } from './orderBy.pipe';
         DepartmentAnalysisComponent,
         ShoutsAnalysisComponent,
         OrderBy
-  ],
+],
   imports: [
       ReactiveFormsModule,
       BrowserModule,
@@ -94,7 +96,8 @@ import { OrderBy } from './orderBy.pipe';
     CommentsService,
     ShoutsService,
     AuthService,
-    Departamento
+    Departamento,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
