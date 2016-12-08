@@ -8,6 +8,7 @@ import {routing, appRoutingProviders} from './app.routing';
 import {HomeComponent} from './home/home.component';
 import {LikeWidgetComponent} from './like/like.component';
 import {CLikeWidgetComponent} from './clike/clike.component';
+import {FlagWidgetComponent} from './flag/flag.component';
 import {AboutComponent} from './about/about.component';
 import {LogoutComponent} from './logout/logout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -55,6 +56,7 @@ import { OrderBy } from './orderBy.pipe';
         HomeComponent,
         AdminComponent,
         LikeWidgetComponent,
+        FlagWidgetComponent,
         CLikeWidgetComponent,
         AboutComponent,
         DashboardComponent,

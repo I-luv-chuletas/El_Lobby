@@ -35,6 +35,7 @@ export class UsersService {
     }
 
     editUser(usr: Users): Observable<Users> {
+      localStorage.setItem('priv', usr.priv);
       return this.http.put(`${this.usersURL}/${usr.id}`, JSON.stringify(usr), this.options)
                       .map((res:Response) => res.json())
                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
