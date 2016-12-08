@@ -8,8 +8,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 })
 export class DataChartComponent implements OnInit {
 
-  @Input('data') dataF: number;
-  @Input('lab') label:string;
+  @Input('data') dataF:any;
+  // @Input('lab') label:string;
   
 
   public pieChartLabels:string[];
