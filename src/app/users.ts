@@ -9,7 +9,7 @@ export class Users {
     id: string;
     anon: string;
     name: string;
-    dept: string;
+    departmento: string;
     priv: string;
     email: string;
     password: string;

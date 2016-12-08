@@ -16,7 +16,11 @@ export class ShoutsService {
 // =======
 
     private shoutsURL = "http://api.neighbornet.io/shout";
+
+    private shoutsByDeptURL = "http://api.neighbornet.io/shout/dept" 
+
     private popularityURL = " http://api.neighbornet.io/popularity/dept";
+
     private headers   = new Headers({"Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });
 
@@ -52,6 +56,13 @@ export class ShoutsService {
                .map((res:Response) => res.json())
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
+
+    getShoutsByDept(dept: string){
+        return this.http.get(`${this.shoutsByDeptURL}/${dept}`)
+               .map((res:Response) => res.json())
+               .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
 
     update(shout: Shouts): Observable<Shouts>{
 

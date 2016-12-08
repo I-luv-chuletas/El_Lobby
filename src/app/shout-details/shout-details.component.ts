@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterContentInit, Directive } from '@angular/core';
+import { Component, Input, OnInit, AfterContentInit, Directive, AfterContentChecked } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
@@ -18,10 +18,8 @@ export class ShoutDetailsComponent implements OnInit {
 
     // @Input() shout = new Shouts();
     shout = new Shouts();
-    shoutId: string;
     hit = new Hits();
-
-    temp: Shouts[];
+    shoutId: string;
     commentSection = new Array<Comments>();
     
 
@@ -48,6 +46,14 @@ export class ShoutDetailsComponent implements OnInit {
                            });
 
       });
+    }
+
+    ngAfterContentChecked(){
+
+        // Si se detecta que hubo un nuevo comentario añadido
+        // if(this.newCommentFlag){
+          
+        // }
 
     }
 
@@ -62,15 +68,17 @@ export class ShoutDetailsComponent implements OnInit {
     }
 
 
-    test(){
-        console.log(this.temp);
-        this.shout = JSON.parse(JSON.stringify(this.temp))
-    }
+    // test(){
+    //     console.log(this.temp);
+    //     this.shout = JSON.parse(JSON.stringify(this.temp))
+    // }
 
 
     onNewComment(comment: Comments) {
         console.log("padrastro pepeeeeeeeeeeee");
         this.commentSection.push(comment);
+
+
         console.log(JSON.stringify(this.commentSection));
     }
 
