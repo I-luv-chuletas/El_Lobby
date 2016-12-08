@@ -1,5 +1,5 @@
 <h1>Top Rated Shouts</h1>
-<div id="shoutDiv" *ngFor="let shout of shouts | orderBy: ['title']; let index=index; let odd=odd; let even=even;" (click)="showDetails(shout)"
+<div id="shoutDiv" *ngFor="let shout of shouts | orderBy: ['-rating']; let index=index; let odd=odd; let even=even;" (click)="showDetails(shout)"
       class="row"
       [ngClass]="{ odd: odd, even: even }">
       <h4>{{shout.title}}</h4>
