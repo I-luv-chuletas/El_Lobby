@@ -4,10 +4,7 @@ import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
 import {OrderBy} from '../orderBy.pipe';
-<<<<<<< HEAD
 import {AuthService} from '../services/auth.service' 
-=======
->>>>>>> c98dbc9ef1ec45e83c6f2921e2ad1d81f552c903
 
 @Component({
     selector: 'comment-section',
@@ -41,9 +38,10 @@ export class CommentsComponent implements OnInit {
     }
 
 
-    addComment(): void {
-        this.model.shoutID = this.shoutId; 
-        this.model.userId = localStorage.getItem('userID');
+    addComment(model: Comments): void {
+        model.shoutID = this.shoutId; 
+        model.userId = localStorage.getItem('userID');
+        
         console.log("Printeando en addComment()" + this.model);
         this.commentService.addComment(this.model).subscribe(
             (data) => this.model = data, error => console.log(error)
