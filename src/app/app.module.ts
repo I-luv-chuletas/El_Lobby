@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {HomeComponent} from './home/home.component';
 import {LikeWidgetComponent} from './like/like.component';
+import {CLikeWidgetComponent} from './clike/clike.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
@@ -23,6 +24,7 @@ import {CommentsService} from './services/comments.service';
 import {ValidationService} from './services/validation.service';
 import {AuthService} from './services/auth.service';
 import {LikesService} from './services/likes.service';
+import {ClikesService} from './services/clikes.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -45,6 +47,7 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
         AppComponent,
         HomeComponent,
         LikeWidgetComponent,
+        CLikeWidgetComponent,
         AboutComponent,
         DashboardComponent,
         CommentsComponent,
@@ -71,6 +74,7 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
     AuthGuard,
     LoginGuard,
     LikesService,
+    ClikesService,
     appRoutingProviders,
     ValidationService,
     CommentsService,

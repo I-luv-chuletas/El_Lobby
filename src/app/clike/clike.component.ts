@@ -1,32 +1,32 @@
-import { Component, Input, OnChanges,EventEmitter, SimpleChange, OnInit, Output } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange,  EventEmitter,  OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { LikesService } from '../services/likes.service';
-import { Liked } from '../liked';
+import { ClikesService } from '../services/clikes.service';
+import { Clike } from '../clike';
 
 @Component({
-  selector: 'like-widget',
+  selector: 'clike-widget',
   template: `
   <span><i class="glyphicon glyphicon-thumbs-up pull-right text-success btn" (click)="rateUp()"> {{lcount}}</i></span>
   `
 })
-export class LikeWidgetComponent implements OnChanges, OnInit {
+export class CLikeWidgetComponent implements OnChanges, OnInit {
 
   constructor(
-      private likeService: LikesService,
+      private clikeService: ClikesService,
       private router: Router
   ) { }
 
   @Input () id: string;
   @Output() onLiked = new EventEmitter<boolean>();
   public lcount: number;
-  like = new Liked();
+  clike = new Clike();
 
-  ngOnChanges() {
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
 
   }
 
   ngOnInit() {
-    this.likeService.getLikeCount(this.id).subscribe((data:any) => this.lcount = data, err => console.log(err));
+    this.clikeService.getLikeCount(this.id).subscribe((data:any) => this.lcount = data, err => console.log(err));
   }
 
   isLoggegIn() {
@@ -39,10 +39,10 @@ export class LikeWidgetComponent implements OnChanges, OnInit {
   rateUp () {
     this.isLoggegIn();
     this.onLiked.emit(true);//triggers event
-    this.like.userID = localStorage.getItem('userID');
-    this.like.shoutID = this.id;
+    this.clike.userID = localStorage.getItem('userID');
+    this.clike.commentID = this.id;
 
-    this.likeService.createLike(this.like).subscribe(
+    this.clikeService.createLike(this.clike).subscribe(
       (data) => {if (data) { this.lcount++; } },
       (error) => { console.log(error)}
     );

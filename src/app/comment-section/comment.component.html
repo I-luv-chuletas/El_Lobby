@@ -1,13 +1,16 @@
 <h3>Discussion Thread: </h3>
 
-<div class="row" style="height: 90%; margin-left: 0.1%;; margin-bottom: 0.5%">
-    <div class="col-sm-7">
-
-        <form class="form-horizontal">
+<div class="row" style="height: 90%; margin-left: 0.1%; margin-bottom: 0.5%">
+    <div class="col-sm-10">
+        <form class="form-horizontal" style="padding-left: 13px">
             <div class="form-comment">
-                <input [(ngModel)]="model.userId" type="text" class="form-control" placeholder="Name" name="name">
-                <input [(ngModel)]="model.content" type="text" class="form-control" placeholder="Write your opinion!" name="content">
-               <button class="btn btn-success pull-right" (click)="addComment(model)">Post</button>
+              <div class="form-group">
+                <textarea [(ngModel)]="model.content" type="text" class="form-control" rows="2" placeholder="Write your opinion!" name="content"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success pull-right" (click)="addComment(model)">Post</button>
+              </div>
+              <p class="text-info">Tu Comentario Será Publicado bajo un seudónimo</p>
             </div>
         </form>
     </div>
