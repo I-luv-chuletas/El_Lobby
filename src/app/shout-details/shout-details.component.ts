@@ -21,6 +21,7 @@ export class ShoutDetailsComponent implements OnInit {
     commentSection = new Array<Comments>();
     idPalChild: string;
 
+    
     constructor(
         private shoutService: ShoutsService,
         private route: ActivatedRoute,

@@ -3,6 +3,7 @@ import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
+import {OrderBy} from '../orderBy.pipe'; 
 
 @Component({
     selector: 'comment-section',
@@ -14,6 +15,7 @@ export class CommentsComponent implements OnInit {
 
     @Input() shoutId: string;
     comments: Comments[];
+    forPipeRating: number[];
 
     model = new Comments();
     public likes: number;
