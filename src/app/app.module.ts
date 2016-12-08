@@ -30,6 +30,7 @@ import {ClikesService} from './services/clikes.service';
 import {HitsService} from './services/hits.service';
 import {UsersService} from './services/users.service';
 import {SearchService} from './services/search.service';
+import {AnalyticsService} from './services/analytics.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -99,7 +100,8 @@ import { OrderBy } from './orderBy.pipe';
     ShoutsService,
     AuthService,
     Departamento,
-    SearchService
+    SearchService,
+    AnalyticsService
   ],
   bootstrap: [AppComponent]
 })

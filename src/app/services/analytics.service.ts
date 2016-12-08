@@ -8,6 +8,8 @@ import {Observable} from 'rxjs/Rx';
 export class AnalyticsService {
 
     private shoutsURL = "http://api.neighbornet.io/shout";
+    private shoutHitsURL = "http://api.neighbornet.io/hit";
+    
     private headers   = new Headers({"Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });
 
@@ -19,6 +21,11 @@ export class AnalyticsService {
         return this.http.get(`${this.shoutsURL}/${id}`)
                .map((res:Response) => res.json())
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
+
+    getShoutHits(){
+        
     }
 
     getApprovalPercentage(id: string): Observable<Shouts[]> {
