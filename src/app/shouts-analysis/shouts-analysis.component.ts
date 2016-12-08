@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MostActive } from '../mostactive';
+import { AnalyticsService } from '../services/analytics.service';
+import { OrderBy } from '../orderBy.pipe';
 
 @Component({
   selector: 'shouts-analysis',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoutsAnalysisComponent implements OnInit {
 
-  constructor() { }
+  mostActive: MostActive[];
+  errorMessage: string;
+  constructor(
+    private analyticsService: AnalyticsService
+  ) { }
 
   ngOnInit() {
+    this.analyticsService.getMostActiveList()
+                       .subscribe(
+                         shouts => this.mostActive = shouts,
+                         error =>  this.errorMessage = <any>error);
   }
 
 }

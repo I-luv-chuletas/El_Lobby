@@ -1,7 +1,8 @@
 <h4>Department Statistics Menu:</h4>
 
-<div class="btn btn-group-justified">
-    
-    ß
-
+<div class="col-md-9">
+    <div *ngFor="let item of mostPopular | orderBy: ['-num_shouts'];">
+        <h3>{{item._id}}</h3>
+        <h4 class="pull-right">{{item.num_shouts}}</h4>
+    </div>
 </div>

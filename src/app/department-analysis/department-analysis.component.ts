@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsService} from '../services/analytics.service';
-import { CommentsService } from '../services/comments.service';
-import { ShoutsService } from '../services/shouts.service';
-import { HitsService } from '../services/hits.service';
-
+import { AnalyticsService } from '../services/analytics.service';
+import { MostPopular } from '../mostpopular';
+import { OrderBy } from '../orderBy.pipe';
 
 @Component({
   selector: 'department-analysis',
@@ -11,15 +9,18 @@ import { HitsService } from '../services/hits.service';
   styles: [require('./department-analysis.component.css')]
 })
 export class DepartmentAnalysisComponent implements OnInit {
-
+  
+  mostPopular: MostPopular[];
+  errorMessage: string;
   constructor(
-    private analyticsService :AnalyticsService,
-    private shoutsService :ShoutsService,
-    private hitsService :HitsService
-
+    private analyticsService: AnalyticsService
   ) { }
 
   ngOnInit() {
+    this.analyticsService.getMostPoularList()
+                       .subscribe(
+                         shouts => this.mostPopular = shouts,
+                         error =>  this.errorMessage = <any>error);
   }
 
 }
