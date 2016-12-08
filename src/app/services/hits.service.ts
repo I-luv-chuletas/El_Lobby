@@ -5,9 +5,9 @@ import {Observable} from 'rxjs/Rx';
 
 
 @Injectable()
-export class AnalyticsService {
+export class HitsService {
 
-    private hitsURL = "http://api.neighbornet.io/hits";
+    private hitsURL = "http://api.neighbornet.io/hit";
     private headers   = new Headers({"Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });
 

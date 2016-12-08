@@ -7,6 +7,7 @@ import {OrderBy} from '../orderBy.pipe';
 import {AuthService} from '../services/auth.service'; 
 import {Location} from '@angular/common';
 
+
 @Component({
     selector: 'comment-section',
     template: require('./comment.component.html'),
@@ -23,9 +24,13 @@ export class CommentsComponent implements OnInit{
     idShout:string;
     counter: number = 0;
 
-    
+
     public likes: number;
     public dislikes: number;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 21b391f33fdb747dbac212e7a4cdcbb006464123
 
     ngOnInit() {
         console.log(this.shoutId);    
@@ -54,8 +59,14 @@ export class CommentsComponent implements OnInit{
     //     this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));
     // }
 
+<<<<<<< HEAD
     addComment(model: Comments): void {
         model.shoutID = this.shoutId; 
+=======
+    addComment(): void {
+        this.model.shoutID = this.shoutId;
+        this.model.userId = localStorage.getItem('userID');
+>>>>>>> 21b391f33fdb747dbac212e7a4cdcbb006464123
         console.log("Printeando en addComment()" + this.model);
       
         model.userID = localStorage.getItem('userID');

@@ -3,27 +3,32 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
 import { ShoutsService } from '../services/shouts.service';
+import { HitsService } from '../services/hits.service';
 import { Comments } from '../comments';
+import { Hits } from '../hits';
 import {CommentsComponent} from '../comment-section/comment.component'
 
 @Component({
     selector: 'shout-detail',
     template: require('./shout-details.component.html'),
     styles: [require('./shout-details.component.css')]
-    
+
 })
 export class ShoutDetailsComponent implements OnInit {
 
     // @Input() shout = new Shouts();
     shout = new Shouts();
+    shoutId: string;
+    hit = new Hits();
 
     temp: Shouts[];
     commentSection = new Array<Comments>();
     idPalChild: string;
 
-    
+
     constructor(
         private shoutService: ShoutsService,
+        private hitsService: HitsService,
         private route: ActivatedRoute,
         private location: Location
     ) { }
@@ -33,9 +38,27 @@ export class ShoutDetailsComponent implements OnInit {
           let id = params['id']; // El simbolo de suma antes de params convierte el id string a un int
 
           this.shoutService.getShout(id)
-                           .subscribe(sentShout => this.shout = sentShout ); 
-        console.log(this.shout.id);
+                           .subscribe((sentShout) => {
+                              if (sentShout) {
+                                this.shout = sentShout;
+                                this.shoutId = sentShout.id;
+
+                                this.recHit();// record view
+                              }
+                           });
+
       });
+
+    }
+
+    recHit():void {
+        if(localStorage.getItem('userID')) {
+          this.hit.userID = localStorage.getItem('userID');
+          this.hit.shoutID = this.shoutId;
+          this.hit.dept = this.shout.taggedDepts;
+
+          this.hitsService.create(this.hit).subscribe();
+        }
     }
 
 
@@ -52,7 +75,7 @@ export class ShoutDetailsComponent implements OnInit {
 
 
     save(): void{
-        
+
     }
 
 
