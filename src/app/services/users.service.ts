@@ -15,13 +15,11 @@ export class UsersService {
     constructor(private http: Http) { }
 
 
-    getProfile(id: string) {
+    getProfile(id: string): Observable<Users>  {
       return this.http.get(`${this.usersURL}/${id}`,  this.options).map(res => res.json());
     }
 
     getUsers() : Observable<Users[]> {
-
-        // ...using get request
         return this.http.get(this.usersURL, this.options)
                        // ...and calling .json() on the response to return data
                         .map((res:Response) => res.json())
@@ -35,7 +33,7 @@ export class UsersService {
     }
 
     editUser(usr: Users): Observable<Users> {
-      localStorage.setItem('priv', usr.priv);
+      localStorage.setItem('priv', usr.priv); //uodT
       return this.http.put(`${this.usersURL}/${usr.id}`, JSON.stringify(usr), this.options)
                       .map((res:Response) => res.json())
                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
