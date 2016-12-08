@@ -24,6 +24,10 @@ div {
 }*/
 
 #shouts {
-    min-height: 4em;
+    min-height: 6em;
+    cursor: pointer;
+}
+
+li:hover {
     cursor: pointer;
 }

@@ -44,7 +44,10 @@ export class CreateShoutComponent implements OnInit {
     create(model: Shouts, isValid: boolean): void{
         this.shoutService.create(model).subscribe(
             postedShout =>  this.shout = postedShout,
-            error => this.errorMessage = error.status 
+            error => this.errorMessage = error.status,
+            ()=> {
+                this.goToShout(this.shout.id);
+            } 
         );
 
        console.log("Creating shout "+ JSON.stringify(this.shout)); 
@@ -55,7 +58,7 @@ export class CreateShoutComponent implements OnInit {
     }
 
 
-    goToShout(id: String):void {
+    goToShout(id: string):void {
 
         
         let link = ['detail/', id];
