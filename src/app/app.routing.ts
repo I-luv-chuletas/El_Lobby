@@ -12,6 +12,7 @@ import {ShoutDetailsComponent} from './shout-details/shout-details.component';
 import {ShoutsComponent} from './shouts/shouts.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './logout/logout.component';
 import {SolutionsComponent} from './solutions/solutions.component';
 
 
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     { path: 'shouts', component: ShoutsComponent},
     { path: 'analytics', component: AnalyticsComponent},
     { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
-    { path: 'solutions', component:SolutionsComponent}
+    { path: 'logout', component: LogoutComponent},
+    { path: 'solutions', component: SolutionsComponent}
 ];
 
 export const appRoutingProviders: any[] = [];

@@ -1,0 +1,29 @@
+div {
+    display: block;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+}
+
+.odd { 
+    background-color: #f2f9ff;
+}
+
+.odd:hover{
+    background-color: lightgray;
+}
+
+.even {
+    background-color: #eceff3;
+}
+
+.even:hover{
+    background-color: lightgray;
+}
+/*h4 {
+    height: 2em;
+}*/
+
+li {
+    height: 3em;
+    cursor: pointer;
+}

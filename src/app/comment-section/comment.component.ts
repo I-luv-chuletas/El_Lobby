@@ -4,7 +4,10 @@ import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
 import { FormsModule } from '@angular/forms';
 import {OrderBy} from '../orderBy.pipe';
+<<<<<<< HEAD
 import {AuthService} from '../services/auth.service' 
+=======
+>>>>>>> c98dbc9ef1ec45e83c6f2921e2ad1d81f552c903
 
 @Component({
     selector: 'comment-section',

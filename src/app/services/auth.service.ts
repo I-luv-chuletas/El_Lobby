@@ -43,7 +43,7 @@ export class AuthService {
 
     return this.http.post(`${this.authURL}/register`, JSON.stringify({email: email, password: password}), this.options)
       .map((response: Response) => {
-        
+
         let token = response.json() && response.json().auth.id;
         if(token){
           localStorage.setItem('currentUser', JSON.stringify({userName: email, token: response.json().auth.id}));
@@ -55,7 +55,7 @@ export class AuthService {
         }
       })
       .catch((error:any) => Observable.throw(error.json().error || "Server error"));
-      
+
   }
 
 
@@ -63,11 +63,11 @@ export class AuthService {
     localStorage.removeItem('auth_token');
     localStorage.removeItem('currentUser');
     localStorage.removeItem('email');
+    localStorage.removeItem('userID');
     this.token = null;
   }
 
   isLoggedIn() {
     return this.token;
   }
-
 }

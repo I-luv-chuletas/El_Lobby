@@ -1,4 +1,12 @@
-<p>
-  solutions is the view where we will be showing all of the shouts which status is "solved" (haven't given any specific value to it')
-  We still need to design and implment this view in a way that makes sense for what we need.
-</p>
+<h1>Solutions</h1>
+<div class="general-shouts">
+    <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h3>Found Solutions!</h3>
+            <li><h4>{{shout.title}}</h4></li>
+            <label>Rating</label><h6>{{shout.rating}}</h6>
+    </ul>
+    <div *ngFor="let comment of comments">
+      <h6>{{comment.id}}</h6>
+      <h6>{{comment.content}}</h6>
+    </div>
+</div>
