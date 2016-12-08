@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Departamento, DEPS} from '../deps';
 import { Users } from '../users';
+import {AuthService} from '../services/auth.service';
+import {Auth} from '../auth';
+import {ValidationService} from '../services/validation.service';
+import {Location} from '@angular/common';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-signup',
@@ -9,16 +15,32 @@ import { Users } from '../users';
 })
 export class SignupComponent implements OnInit {
 
-  model = new Users ();
+  @Input() model = new Users ();
   departamentos = DEPS;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private location: Location,
+    private _fb: FormBuilder
+  ) { }
 
   ngOnInit() {
   }
 
   signUp() {
+    
     console.log(JSON.stringify(this.model));
+    
+    // Marroneo alert: No esta por ngForm ahoramismo
+    this.authService.signup(this.model.email, this.model.password);
+    this.redirectToDashboard();
+
+  }
+
+  redirectToDashboard(): void{
+    let link = [''];
+    this.router.navigate(link);
   }
 
 }

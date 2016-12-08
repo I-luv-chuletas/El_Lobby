@@ -32,8 +32,30 @@ export class AuthService {
                           return false;
                       }
                     })
-                    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+                    .catch((error:any) => Observable.throw(error.json().error || 'Ser ver error'));
   }
+
+/*
+  signup ahoramismo no tiene nada de lo que dijimos que tenia, hay que hacer eso ya.
+*/
+  signup(email: string, password:string): Observable<boolean> {
+    return this.http.post(`${this.authURL}/signup`, JSON.stringify({email: email, password: password}), this.options)
+      .map((response: Response) => {
+        
+        let token = response.json() && response.json().auth.id;
+        if(token){
+          localStorage.setItem('currentUser', JSON.stringify({userName: email, token: response.json().auth.id}));
+          localStorage.setItem('userID', response.json().id);
+          localStorage.setItem('email', email);
+          return true;
+        } else {
+         return false;
+        }
+      })
+      .catch((error:any) => Observable.throw(error.json().error || "Server error"));
+      
+  }
+
 
   logout() {
     localStorage.removeItem('auth_token');
@@ -45,4 +67,5 @@ export class AuthService {
   isLoggedIn() {
     return this.token;
   }
+
 }
