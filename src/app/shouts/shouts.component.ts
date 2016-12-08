@@ -58,8 +58,15 @@ export class ShoutsComponent implements OnInit {
     search(term: string) {
     this.searchService.search(term)
         .subscribe((data) => this.items = data, err => console.log(err),
-        // () => {
-        //     console.log("Valor: " + term + " Objetos: " + JSON.stringify(this.items) );
-        // }
-        )}
+        () => {
+            console.log("Valor: " + term + " Objetos: " + JSON.stringify(this.items) );
+        });
+    }
+    
+    
+    // searchByDept(){
+    //     this.shoutService.getShoutsByDept(this.deptValue).subscribe(
+    //         (data) => this.items = data, err => console.log(err)
+    //     );
+    // }
 }
