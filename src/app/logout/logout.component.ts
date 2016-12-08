@@ -4,7 +4,7 @@ import {AuthService} from '../services/auth.service';
 
 @Component({
     selector: 'logout-login-section',
-    template: `<a href="" (click)="login()"> {{label}} </a>`
+    template: `<span (click)="login()">{{label}} </span>`
 })
 
 export class LogoutComponent implements OnInit {
@@ -21,18 +21,12 @@ export class LogoutComponent implements OnInit {
           this.label = 'Login/Signup';
         } else{
           this.label = 'Logout';
-        }      
+        }
     }
 
     login() {
-      if(!localStorage.getItem('userID')) {
-        let link = ['login']
-        this.router.navigate(link);
+      if(localStorage.getItem('userID')) {
+        this.authservice.logout();
       }
-
-      this.authservice.logout();
-
-      let link = ['home']
-      this.router.navigate(link);
     }
 }

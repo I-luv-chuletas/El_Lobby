@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         (data) => {
           if (data) {
             this.invalidCred = false;
-            let link = ['home']
+            let link = ['home'];
             this.router.navigate(link);
           }
         },
