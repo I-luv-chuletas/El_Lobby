@@ -8,7 +8,7 @@ import {Observable} from 'rxjs/Rx';
 export class CommentsService {
 
     private commentsURL = 'http://api.neighbornet.io/comment';
-    private commentShoutURL = 'http://api.neighbornet.io/comment/shout'
+    private commentShoutURL = 'http://api.neighbornet.io/comment/shout';
     private headers = new Headers({"Content-Type": "application/json"});
 
     constructor(
@@ -17,7 +17,7 @@ export class CommentsService {
 
     getComments(shoutId: string): Observable<Comments[]>{
       console.log('miramos el id:' + shoutId);
-      const url = `${this.commentsURL}/${shoutId}`;
+      const url = `${this.commentShoutURL}/${shoutId}`;
       return this.http.get(url)
                       .map((res:Response) => res.json())
                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
