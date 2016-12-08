@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AnalyticsService } from '../services/analytics.service';
+import { MostPopular } from '../mostpopular';
+import { OrderBy } from '../orderBy.pipe';
 
 @Component({
   selector: 'department-analysis',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentAnalysisComponent implements OnInit {
 
-  constructor() { }
+  mostPopular: MostPopular[];
+  errorMessage: string;
+  constructor(
+    private analyticsService: AnalyticsService
+  ) { }
 
   ngOnInit() {
+    this.analyticsService.getMostPoularList()
+                       .subscribe(
+                         shouts => this.mostPopular = shouts,
+                         error =>  this.errorMessage = <any>error);
   }
 
 }
