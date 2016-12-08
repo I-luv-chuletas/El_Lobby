@@ -18,11 +18,7 @@ export class ShoutDetailsComponent implements OnInit {
     shout:Shouts;
 
     temp: Shouts[];
-<<<<<<< HEAD
-    commentSection: Comment[];
-=======
     commentSection = new Array<Comments>();
->>>>>>> cabeea590d198e26c3a50601a148390f8b452db3
 
     
     constructor(
