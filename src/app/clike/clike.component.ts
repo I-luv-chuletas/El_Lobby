@@ -6,7 +6,7 @@ import { Clike } from '../clike';
 @Component({
   selector: 'clike-widget',
   template: `
-  <span><i class="glyphicon glyphicon-thumbs-up pull-right text-success btn" (click)="rateUp()"> {{lcount}}</i></span>
+  <span style="line-height: 33px;">Ratings:<i class="glyphicon glyphicon-thumbs-up pull-right text-success btn" (click)="rateUp()"> {{lcount}}</i></span>
   `
 })
 export class CLikeWidgetComponent implements OnChanges, OnInit {
