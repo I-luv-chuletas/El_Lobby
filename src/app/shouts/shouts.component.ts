@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { NgForm }    from '@angular/forms';
+import { NgForm, FormsModule }    from '@angular/forms';
 import {Location} from '@angular/common';
 import {Observable} from 'rxjs/Rx';
 import {Router} from '@angular/router';
@@ -8,6 +8,7 @@ import { DEPS } from '../deps';
 import {SearchService} from '../services/search.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+
 
 import {Shouts} from '../shouts';
 import { ShoutsService} from '../services/shouts.service';
@@ -23,11 +24,13 @@ export class ShoutsComponent implements OnInit {
 
     sort = 1;
     term: string;
+    @Input() deptValue: string;
     items: Array<Shouts>;
     errorMessage: string;
     shouts: Shouts;
     mode = 'Observable';
     titles: string;
+    deps = DEPS;
 
     constructor(
         private shoutService: ShoutsService,

@@ -49,3 +49,12 @@ h3 {
     background: none;
     margin-left: 12.5em;
 }
+
+.row {
+    margin-left: 15em;
+}
+
+ul {
+    height: 250px;
+    overflow-y: scroll;
+}

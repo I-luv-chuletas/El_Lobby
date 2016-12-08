@@ -1,8 +1,21 @@
 <h1>Shouts Menu</h1>
 <h3>Type to search by department:</h3>
-        <div class="form-group">
+        <!--<div class="form-group">
           <input #term type="text" (keyup)="search(term.value)" class="form-control" placeholder="Search by Department">
-        </div>
+        </div>-->
+        <div class="row">
+          <div class="col-md-6">
+              <div class="input-group">
+                <input #term type="text" (keyup)="search(term.value)" class="form-control" placeholder="Buscar por Departamentos" value={{dept}} aria-label="...">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Departamentos <span class="caret"></span></button>
+                  <ul class="dropdown-menu scrollable-menu" role="menu">
+                    <li *ngFor="let dept of deps"><a>{{dept}}</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
   <hr>
   <div *ngIf="term.value">
   <div id="shouts" *ngFor="let shout of items; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
