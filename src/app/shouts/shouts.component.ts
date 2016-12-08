@@ -15,7 +15,7 @@ import { ShoutsService} from '../services/shouts.service';
     styles: [(require('./shouts.component.css'))]
 })
 export class ShoutsComponent implements OnInit {
-
+    sort = 1;
     errorMessage: string;
     shouts: Shouts;
     mode = 'Observable';
@@ -40,5 +40,10 @@ export class ShoutsComponent implements OnInit {
     showDetails(shout: Shouts): void {
         let link = ['/detail', shout.id];
         this.router.navigate(link);
+    }
+
+    sorting(){
+        this.sort = 1;
+        console.log(JSON.stringify(this.sort));
     }
 }
