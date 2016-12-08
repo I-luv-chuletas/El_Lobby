@@ -6,6 +6,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {HomeComponent} from './home/home.component';
+import {HitWidgetComponent} from './hits/hits.component';
 import {LikeWidgetComponent} from './like/like.component';
 import {CLikeWidgetComponent} from './clike/clike.component';
 import {FlagWidgetComponent} from './flag/flag.component';
@@ -16,6 +17,7 @@ import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentsComponent} from './comment-section/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
+import {ShoutDetailsInlineComponent} from './shout-details-inline/shout-details-inline.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {Departamento} from './deps';
 
@@ -56,6 +58,7 @@ import { OrderBy } from './orderBy.pipe';
 @NgModule({
   declarations: [
         AppComponent,
+        HitWidgetComponent,
         HomeComponent,
         AdminComponent,
         LikeWidgetComponent,
@@ -67,6 +70,7 @@ import { OrderBy } from './orderBy.pipe';
         CreateShoutComponent,
         ShoutsComponent,
         ShoutDetailsComponent,
+        ShoutDetailsInlineComponent,
         AnalyticsComponent,
         UserComponent,
         LoginComponent,

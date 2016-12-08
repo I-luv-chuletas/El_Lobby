@@ -1,5 +1,9 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Departamento, DEPS} from '../deps';
+import { AnalyticsService} from '../services/analytics.service';
+import { CommentsService } from '../services/comments.service';
+import { ShoutsService } from '../services/shouts.service';
+import { HitsService } from '../services/hits.service';
  
 
 @Component({
@@ -18,7 +22,7 @@ export class AnalyticsComponent {
   insertValue(departamentos: string[], dept: Departamento[], i: number): Departamento[] {
     for (var item of departamentos) {
       dept[i].name = item;
-      i++
+      i++;
     }
     return dept;
   }

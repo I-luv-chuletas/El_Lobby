@@ -9,7 +9,7 @@ import { OrderBy } from '../orderBy.pipe';
   styles: [require('./department-analysis.component.css')]
 })
 export class DepartmentAnalysisComponent implements OnInit {
-
+  
   mostPopular: MostPopular[];
   errorMessage: string;
   constructor(

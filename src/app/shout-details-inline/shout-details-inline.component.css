@@ -1,0 +1,12 @@
+.container {
+  width:50em;
+  word-wrap: break-word;
+  margin: left;
+  font-family: 'Rosario', sans-serif;
+  word-spacing: 2px;
+  min-height: 5em;
+}
+
+.shoutContainer {
+  border: none;
+}

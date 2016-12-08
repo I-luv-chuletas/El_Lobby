@@ -8,8 +8,9 @@ import {Observable} from 'rxjs/Rx';
 @Injectable()
 export class AnalyticsService {
 
+    private shoutsURL = "http://api.neighbornet.io/shout";
+    private shoutHitsURL = "http://api.neighbornet.io/hit";
     private mactiveURL = "http://api.neighbornet.io/mostactive/list"; //most active shouts
-
     private mpopularURL = "http://api.neighbornet.io/rating/sort"; //most popular departments
 
     private headers   = new Headers({"Content-Type": "application/json" });
@@ -25,6 +26,12 @@ export class AnalyticsService {
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+
+    getShoutHits(){
+        
+    }
+
+    
     getMostActiveList(): Observable<MostActive[]> {
         return this.http.get(this.mactiveURL, this.options)
                .map((res:Response) => res.json())
