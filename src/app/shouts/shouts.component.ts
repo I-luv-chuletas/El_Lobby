@@ -15,6 +15,7 @@ import { ShoutsService} from '../services/shouts.service';
     styles: [(require('./shouts.component.css'))]
 })
 export class ShoutsComponent implements OnInit {
+
     sort = 1;
     errorMessage: string;
     shouts: Shouts;
@@ -30,11 +31,15 @@ export class ShoutsComponent implements OnInit {
     ngOnInit() {
         this.getShoutss();
         
+        
     }
 
     getShoutss() {
       this.shoutService.getShouts()
-                       .subscribe((data) => this.shouts = data, err => console.log(err));
+                       .subscribe((data) => this.shouts = data, err => console.log(err)
+                       , () => {
+                           console.log("Looking for epts " + JSON.stringify(this.shouts));
+                       });
     }
 
     showDetails(shout: Shouts): void {

@@ -6,7 +6,7 @@ export class Shouts {
     id: string;
     rating: number;
     userID: string;
-    taggedDepts: string; // Departamentos mencionados/tagueados en
+    departmento: string; // Departamentos mencionados/tagueados en
     commentSectionId: number;
     title: string;
     message: string;

@@ -2,12 +2,12 @@
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     <div class="btn-group" role="group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Department
+      Title
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a>A - Z</a></li>
-      <li><a>Z - A</a></li>
+      <li><a (click)="sort = 1">A - Z</a></li>
+      <li><a (click)="sort = 2">Z - A</a></li>
     </ul>
   </div>
 
@@ -17,13 +17,78 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a>Rating +++</a></li>
-      <li><a>Rating ---</a></li>
+      <li><a (click)="sort = 3">Rating (+-)</a></li>
+      <li><a (click)="sort = 4">Rating (-+)</a></li>
     </ul>
   </div>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Date
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a (click)="sort = 5">Most Recent</a></li>
+      <li><a (click)="sort = 6">Oldest</a></li>
+    </ul>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Departamento
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a (click)="sort = 7">A - Z</a></li>
+      <li><a (click)="sort = 8">Z - A</a></li>
+    </ul>
+  </div>
+</div>
   <hr>
+  <div *ngIf="sort == 1">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['title']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 2">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['-title']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 3">
     <div id="shouts" *ngFor="let shout of shouts | orderBy: ['-rating']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
             <h4>{{shout.title}}</h4>
-            <h5>{{shout.taggedDepts}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
     </div>
-</div>
+  </div>
+  <div *ngIf="sort == 4">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['rating']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 5">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['-createdAt']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 6">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['createdAt']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 7">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['departmento']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
+  <div *ngIf="sort == 8">
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['-departmento']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.departmento}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
+  </div>
