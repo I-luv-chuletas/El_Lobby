@@ -10,4 +10,5 @@
         <button class="glyphicon glyphicon-triangle-bottom vote-down-off"></button>
     </div>
 </div>
-<comment-section [shout]='shout.id'></comment-section>
+
+<comment-section (onNewComment)="onNewComment($event)" [shout]='shout.id'></comment-section>
