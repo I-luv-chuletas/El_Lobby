@@ -39,7 +39,7 @@ import { LoginGuard } from './_guards/login.guard';
 // import { DepartmentAnalysisComponent } from './home/department-analysis/department-analysis.component';
 import { DepartmentAnalysisComponent } from './department-analysis/department-analysis.component';
 import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
-import { OrderBy } from './dashboard/orderBy.pipe';
+import { OrderBy } from './orderBy.pipe';
 
 
 
