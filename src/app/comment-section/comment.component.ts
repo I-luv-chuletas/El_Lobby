@@ -13,12 +13,15 @@ import {OrderBy} from '../orderBy.pipe';
 
 export class CommentsComponent implements OnInit {
 
+    @Input() shoutId: string;
     comments: Comments[];
     forPipeRating: number[];
 
     model = new Comments();
     public likes: number;
     public dislikes: number;
+    
+
 
     constructor(
         private commentService: CommentsService,
@@ -27,6 +30,6 @@ export class CommentsComponent implements OnInit {
     ngOnInit() {
         // Para efectos del hackathon lo dejaremos así, para aplicacioón real necesitamos que envie el id para recoger los
         // comments reales de acuerdo a que 'shout' es.
-        this.commentService.getComments().subscribe((data:any) => this.comments = data, (err:any) => console.log(err));
+        this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));
     }
 }
