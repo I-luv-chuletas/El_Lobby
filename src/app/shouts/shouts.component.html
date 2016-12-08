@@ -1,6 +1,29 @@
 <h1>Shouts Menu</h1>
-<div class="general-shouts">
-    <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
-            <li><h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span></li>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Department
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">A - Z</a></li>
+      <li><a href="#">Z - A</a></li>
     </ul>
+  </div>
+
+    <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Rating
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Rating +++</a></li>
+      <li><a href="#">Rating ---</a></li>
+    </ul>
+  </div>
+  <hr>
+  <!-- Como puñeta lograr que aqui yo envie solo el titulo del shout -->
+    <div id="shouts" *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
 </div>

@@ -23,7 +23,7 @@ div {
     height: 2em;
 }*/
 
-li {
-    height: 3em;
+#shouts {
+    min-height: 4em;
     cursor: pointer;
 }

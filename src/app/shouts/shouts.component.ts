@@ -3,6 +3,7 @@ import { NgForm }    from '@angular/forms';
 import {Location} from '@angular/common';
 import {Observable} from 'rxjs/Rx';
 import {Router} from '@angular/router';
+import { OrderBy } from '../dashboard/orderBy.pipe';
 
 import {Shouts} from '../shouts';
 import { ShoutsService} from '../services/shouts.service';
@@ -16,8 +17,9 @@ import { ShoutsService} from '../services/shouts.service';
 export class ShoutsComponent implements OnInit {
 
     errorMessage: string;
-    shouts: Shouts[];
+    shouts: Shouts;
     mode = 'Observable';
+    titles: string;
 
     constructor(
         private shoutService: ShoutsService,
@@ -27,6 +29,7 @@ export class ShoutsComponent implements OnInit {
 
     ngOnInit() {
         this.getShoutss();
+        
     }
 
     getShoutss() {

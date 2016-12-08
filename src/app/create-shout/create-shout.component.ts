@@ -1,9 +1,10 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, AfterContentInit} from '@angular/core';
 import {ShoutsService} from '../services/shouts.service';
 import {Shouts} from '../shouts';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Departamento, DEPS} from '../deps';
+import {DashboardComponent} from '../dashboard/dashboard.component';
 
 
 @Component({
@@ -17,10 +18,14 @@ export class CreateShoutComponent implements OnInit {
     departamentos = DEPS;
     shout = new Shouts();
     submitted = false;
+    posted: Shouts;
+    errorMessage: String;
 
     ngOnInit() {
 
     }
+
+   
 
     constructor(
         private shoutService: ShoutsService,
@@ -36,16 +41,24 @@ export class CreateShoutComponent implements OnInit {
     //   this.submitted = true;
     // }
 
-    create(): void{
-        this.shoutService.create(this.shout);
-        console.log(JSON.stringify(this.shout) + " .create() shout-details");
+    create(model: Shouts, isValid: boolean): void{
+        this.shoutService.create(model).subscribe(
+            postedShout =>  this.shout = postedShout,
+            error => this.errorMessage = error.status 
+        );
+
+       console.log("Creating shout "+ JSON.stringify(this.shout)); 
+       this.goToShout(this.shout.id);
         
+        // console.log(JSON.stringify(this.shout) + "shout-details .create()");
+        // console.log(this.errorMessage);
     }
 
 
-    goBack():void {
+    goToShout(id: String):void {
 
-        let link = ['']
+        
+        let link = ['detail/', id];
         this.router.navigate(link);
     }
 }

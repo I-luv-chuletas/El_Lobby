@@ -2,7 +2,7 @@ export class Shouts {
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
-  }
+  } 
     id: string;
     rating: number;
     userID: string;
