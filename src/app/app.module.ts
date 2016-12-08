@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
@@ -52,6 +53,7 @@ import { DepartmentAnalysisComponent } from './department-analysis/department-an
 import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
 
 import { OrderBy } from './orderBy.pipe';
+import { DataChartComponent } from './create-shout/data-chart/data-chart.component';
 
 
 
@@ -80,9 +82,11 @@ import { OrderBy } from './orderBy.pipe';
         DepartmentAnalysisComponent,
         DepartmentAnalysisComponent,
         ShoutsAnalysisComponent,
-        OrderBy
+        OrderBy,
+    DataChartComponent
 ],
   imports: [
+      ChartsModule,
       ReactiveFormsModule,
       BrowserModule,
       FormsModule,

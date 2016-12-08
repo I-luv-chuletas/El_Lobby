@@ -1,0 +1,8 @@
+<div style="display: block">
+  <canvas baseChart
+            [data]="dataF"
+            [labels]="label"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+ </div>

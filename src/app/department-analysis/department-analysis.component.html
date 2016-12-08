@@ -7,3 +7,5 @@
         <hr>
     </div>
 </div>
+
+<app-data-chart *ngFor="let item of mostPopular" [lab]="item._id" [data]="item.num_shouts" >
