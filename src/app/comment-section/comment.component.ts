@@ -22,7 +22,8 @@ export class CommentsComponent implements OnInit{
     @Output() onNewComment = new EventEmitter<Comments>();
 
     comments: Comments[];
-    forPipeRating: number[];
+
+    // forPipeRating: number[];
     idShout:string;
     counter: number = 0;
 
@@ -43,7 +44,6 @@ export class CommentsComponent implements OnInit{
             
             this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));            
         }
-
     }
 
     constructor(
@@ -57,7 +57,6 @@ export class CommentsComponent implements OnInit{
     //     console.log("tamo en init de comment " + this.shoutId);
     //     this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));
     // }
-
 
     addComment(): void {
         this.model.shoutID = this.shoutId;

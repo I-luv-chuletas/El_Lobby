@@ -8,28 +8,21 @@ import {Observable} from 'rxjs/Rx';
 @Injectable()
 export class UsersService {
 
-    private usersURL ='http://api.neighbornet.io/api/users';
-    private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
+    private usersURL ='http://api.neighbornet.io/auth';
+    private headers = new Headers({ 'Content-Type': 'application/json' });
     private options = new RequestOptions({ headers: this.headers });
 
     constructor(private http: Http) { }
 
 
-  getProfile() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let authToken = localStorage.getItem('auth_token');
-    headers.append('Authorization', `Bearer ${authToken}`);
-
-    return this.http
-      .get('/profile', { headers })
-      .map(res => res.json());
-  }
+    getProfile(id: string) {
+      return this.http.get(`${this.usersURL}/${id}`,  this.options).map(res => res.json());
+    }
 
     getUsers() : Observable<Users[]> {
 
         // ...using get request
-        return this.http.get(this.usersURL)
+        return this.http.get(this.usersURL, this.options)
                        // ...and calling .json() on the response to return data
                         .map((res:Response) => res.json())
                         //...errors if any
@@ -37,16 +30,14 @@ export class UsersService {
 
     }
 
-    getCats() {
-      return this.http.get(this.usersURL).map(res => res.json());
-    }
-
     addUser(usr: Users) {
       return this.http.post(this.usersURL, JSON.stringify(usr), this.options);
     }
 
-    editUser(usr: Users) {
-      return this.http.put(`${this.usersURL}/${usr.id}`, JSON.stringify(usr), this.options);
+    editUser(usr: Users): Observable<Users> {
+      return this.http.put(`${this.usersURL}/${usr.id}`, JSON.stringify(usr), this.options)
+                      .map((res:Response) => res.json())
+                      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     deleteCat(usr: Users) {

@@ -6,8 +6,8 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">A - Z</a></li>
-      <li><a href="#">Z - A</a></li>
+      <li><a>A - Z</a></li>
+      <li><a>Z - A</a></li>
     </ul>
   </div>
 
@@ -17,13 +17,13 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">Rating +++</a></li>
-      <li><a href="#">Rating ---</a></li>
+      <li><a>Rating +++</a></li>
+      <li><a>Rating ---</a></li>
     </ul>
   </div>
   <hr>
-  <!-- Como puñeta lograr que aqui yo envie solo el titulo del shout -->
-    <div id="shouts" *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
-            <h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    <div id="shouts" *ngFor="let shout of shouts | orderBy: ['-rating']; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4>
+            <h5>{{shout.taggedDepts}}</h5><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
     </div>
 </div>
