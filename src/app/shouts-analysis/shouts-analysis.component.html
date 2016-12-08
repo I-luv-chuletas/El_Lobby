@@ -1,7 +1,9 @@
-<h4>Shouts Statistics Menu: </h4>
+<h4>Shouts Statistics: </h4>
 <div class="col-md-9">
-    <div *ngFor="let item of mostActive | orderBy: ['-num_comments'];">
+    <div id="shoutContainer" *ngFor="let item of mostActive | orderBy: ['-num_comments'];">
         <h3>{{item._id}}</h3>
         <h4 class="pull-right">{{item.num_comments}}</h4>
+        <shout-detail-inline [id]="item._id"></shout-detail-inline>
+        <hr>    
     </div>
 </div>

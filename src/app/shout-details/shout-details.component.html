@@ -1,13 +1,13 @@
 <div *ngIf="shout" id="shoutContainer">
-    <h4 class="pull-right">Rating: {{shout.rating}}</h4> <h3>{{shout.title}}</h3>
+    <h4 class="pull-right">{{shout.rating}}</h4> <h3>{{shout.title}}</h3>
     <div><label>Created by:</label> {{shout.userID}} </div>
 
     <div class="text-center container">
         {{shout.message}}
     </div>
     <div class="buttons pull-right">
-        <button class="glyphicon glyphicon-triangle-top vote-up-off"></button>
-        <button class="glyphicon glyphicon-triangle-bottom vote-down-off"></button>
+        <span class="glyphicon glyphicon-triangle-top vote-up-off"></span>
+        <span class="glyphicon glyphicon-triangle-bottom vote-down-off"></span>
     </div>
 </div>
 

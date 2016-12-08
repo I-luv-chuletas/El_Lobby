@@ -10,3 +10,7 @@
 .shoutContainer {
   border: none;
 }
+
+span:hover {
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MostActive } from '../mostactive';
 import { AnalyticsService } from '../services/analytics.service';
 import { OrderBy } from '../orderBy.pipe';
+import { ShoutDetailsInlineComponent } from '../shout-details-inline/shout-details-inline.component';
 
 @Component({
   selector: 'shouts-analysis',

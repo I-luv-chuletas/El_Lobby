@@ -10,7 +10,7 @@ import { ShoutsService } from '../services/shouts.service';
 })
 export class ShoutDetailsInlineComponent implements OnInit {
 
-    @Input() shoutId: string;
+    @Input() id: string;
     shout = new Shouts();
 
     constructor(
@@ -18,11 +18,11 @@ export class ShoutDetailsInlineComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-      this.shoutService.getShout(this.shoutId)
+      this.shoutService.getShout(this.id)
                        .subscribe((sentShout) => {
                           if (sentShout) {
                             this.shout = sentShout;
-                            this.shoutId = sentShout.id;
+                            this.id = sentShout.id;
                           }
                        }, error => console.log(error), () => {
                            console.log("ngInit de shout-details: " + JSON.stringify(this.shout));
