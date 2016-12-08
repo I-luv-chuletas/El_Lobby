@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams, Jsonp } from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import {Shouts} from '../shouts';
 import { Headers, Http, Response} from '@angular/http';
 
