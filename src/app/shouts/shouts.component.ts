@@ -37,7 +37,7 @@ export class ShoutsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.getShoutss();
+        // this.getShoutss();
         
         
     }
@@ -52,15 +52,11 @@ export class ShoutsComponent implements OnInit {
         this.router.navigate(link);
     }
 
-    sorting(){
-        this.sort = 1;
-        console.log(JSON.stringify(this.sort));
-    }
-
     search(term: string) {
     this.searchService.search(term)
-        .subscribe((data) => this.items = data, err => console.log(err));
-    console.log(JSON.stringify(this.items));
-    this.sort = 0;
-  }
+        .subscribe((data) => this.items = data, err => console.log(err),
+        // () => {
+        //     console.log("Valor: " + term + " Objetos: " + JSON.stringify(this.items) );
+        // }
+        )}
 }
