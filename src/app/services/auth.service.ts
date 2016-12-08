@@ -22,6 +22,9 @@ export class AuthService {
                     .map((response: Response) => {
                       let token = response.json() && response.json().auth.id;
                       if (token) {
+                          if (response.json().status === 'inactive')
+                              return false;
+                              
                           localStorage.setItem('currentUser', JSON.stringify({ username: email, token: response.json().auth.id }));
                           localStorage.setItem('userID', response.json().id);
                           localStorage.setItem('email', email);
