@@ -26,6 +26,8 @@ export class AuthService {
                           localStorage.setItem('userID', response.json().id);
                           localStorage.setItem('email', email);
                           localStorage.setItem('priv', response.json().priv);
+                          localStorage.setItem('dept', response.json().dept);
+                          localStorage.setItem('subscribedShouts', response.json().subscribedShouts);
                           // return true to indicate successful login
                           return true;
                       } else {
@@ -48,6 +50,7 @@ export class AuthService {
           localStorage.setItem('currentUser', JSON.stringify({userName: email, token: response.json().auth.id}));
           localStorage.setItem('userID', response.json().id);
           localStorage.setItem('email', email);
+          localStorage.setItem('departmento', response.json().departmento);
           return true;
         } else {
          return false;

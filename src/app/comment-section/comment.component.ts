@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, DoCheck, ApplicationRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck, OnChanges,AfterContentChecked } from '@angular/core';
 import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Router, Params} from '@angular/router';
 import { Comments } from '../comments';
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import {OrderBy} from '../orderBy.pipe';
 import {AuthService} from '../services/auth.service'; 
 import {Location} from '@angular/common';
+import {FormGroup, FormBuilder} from '@angular/forms'
 
 
 @Component({
@@ -14,19 +15,19 @@ import {Location} from '@angular/common';
     styles: [require('./comment.component.css')]
 })
 
-export class CommentsComponent implements OnInit{
+export class CommentsComponent implements OnInit, AfterContentChecked{
 
     @Input('shout') shoutId: any;
     @Input() tes = new Comments();
     @Input() model = new Comments();
     @Output() onNewComment = new EventEmitter<Comments>();
 
-    comments: Comments[];
+    comments = new Array<Comments>();
 
     // forPipeRating: number[];
     idShout:string;
     counter: number = 0;
-
+    newCommentFlag: boolean = false;
 
     public likes: number;
     public dislikes: number;
@@ -36,18 +37,35 @@ export class CommentsComponent implements OnInit{
         console.log(this.shoutId);    
     }
 
-    ngDoCheck(){
-
-        if (this.shoutId && this.counter < 10){
-            console.log("do check me: " + this.shoutId);
+    ngAfterContentChecked(){
+        
+      if (this.shoutId && this.counter < 10){
             this.counter+=1;
             
-            this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err));            
-        }
+                 
+            if(this.newCommentFlag){
+                this.comments.push(this.model);
+                this.newCommentFlag = false;   
+                this.model = null;
+                this.model = new Comments(); 
+            }
+            
+            
+        }if(this.counter >= 8)
+            this.counter -=4;
+    }
+
+
+    ngOnChanges(){
+        this.commentService.getComments(this.shoutId).subscribe((data) => this.comments = data, err => console.log(err),
+            ()=> {
+                // console.log("Mira a ver si salen los nuevos: " + this.comments)
+            });       
+        console.log("nigga we made it");
+          
     }
 
     constructor(
-        private ref: ApplicationRef,
         private commentService: CommentsService,
         private authService: AuthService,
         private router: Router
@@ -59,17 +77,16 @@ export class CommentsComponent implements OnInit{
     // }
 
     addComment(): void {
+        // this.model.message =
         this.model.shoutID = this.shoutId;
         this.model.userID = localStorage.getItem('userID');
 
-        console.log("Printeando en addComment()" + JSON.stringify(this.model));
-      
-        this.model.userID = localStorage.getItem('userID');
         this.commentService.addComment(this.model).subscribe(
             (data) => this.model = data, error => console.log(error),
             () => {
+                this.newCommentFlag = true;
                 this.onNewComment.emit(this.model);
-                // this.refresh();
+                console.log("Printeando en addComment()" + JSON.stringify(this.model));
             }
         );  
        
