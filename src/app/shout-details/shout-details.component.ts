@@ -43,6 +43,8 @@ export class ShoutDetailsComponent implements OnInit {
 
                                 this.recHit();// record view
                               }
+                           }, error => console.log(error), () => {
+                               console.log("ngInit de shout-details: " + JSON.stringify(this.shout));
                            });
 
       });
@@ -66,12 +68,6 @@ export class ShoutDetailsComponent implements OnInit {
           this.hitsService.create(this.hit).subscribe();
         }
     }
-
-
-    // test(){
-    //     console.log(this.temp);
-    //     this.shout = JSON.parse(JSON.stringify(this.temp))
-    // }
 
 
     onNewComment(comment: Comments) {
