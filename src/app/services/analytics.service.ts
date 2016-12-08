@@ -3,6 +3,7 @@ import { Headers, Http, Response, RequestOptions} from '@angular/http';
 import {MostActive} from '../mostactive';
 import {MostPopular} from '../mostpopular';
 import {Observable} from 'rxjs/Rx';
+import { BaseChartDirective } from 'ng2-charts/ng2-charts';
 
 
 @Injectable()
