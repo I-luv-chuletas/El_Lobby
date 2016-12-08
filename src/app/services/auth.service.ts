@@ -39,7 +39,9 @@ export class AuthService {
   signup ahoramismo no tiene nada de lo que dijimos que tenia, hay que hacer eso ya.
 */
   signup(email: string, password:string): Observable<boolean> {
-    return this.http.post(`${this.authURL}/signup`, JSON.stringify({email: email, password: password}), this.options)
+    console.log("Estamos en authservice pingolo: "+ email + " " + password)
+
+    return this.http.post(`${this.authURL}/register`, JSON.stringify({email: email, password: password}), this.options)
       .map((response: Response) => {
         
         let token = response.json() && response.json().auth.id;

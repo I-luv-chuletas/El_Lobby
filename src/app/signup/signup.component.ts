@@ -30,12 +30,16 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     
-    console.log(JSON.stringify(this.model));
+    console.log(JSON.stringify(this.model) + 'verificando signUp()');
     
     // Marroneo alert: No esta por ngForm ahoramismo
-    this.authService.signup(this.model.email, this.model.password);
-    this.redirectToDashboard();
-
+    this.authService.signup(this.model.email, this.model.password).subscribe(
+      (data) => {
+        if(data){
+          this.redirectToDashboard();    
+        }
+      }
+    );
   }
 
   redirectToDashboard(): void{

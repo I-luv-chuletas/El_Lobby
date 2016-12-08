@@ -1,7 +1,7 @@
 <h1>Login</h1>
     <form class="form-horizontal"  [formGroup]="loginForm" novalidate (ngSubmit)="login(loginForm.value, loginForm.valid)">
         <div class="form-login">
-            <input formControlName="email" type="text" class="form-control" placeholder="Username">
+            <input formControlName="email" type="text" class="form-control" placeholder="E-mail">
             <small [hidden]="loginForm.controls.email.valid || (loginForm.controls.email.pristine && !submitted)">
                 Email is required.
             </small>
