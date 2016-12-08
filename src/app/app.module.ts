@@ -17,6 +17,7 @@ import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentsComponent} from './comment-section/comment.component';
 import {CreateShoutComponent} from './create-shout/create-shout.component';
 import {ShoutDetailsComponent} from './shout-details/shout-details.component';
+import {ShoutDetailsInlineComponent} from './shout-details-inline/shout-details-inline.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {Departamento} from './deps';
 
@@ -69,6 +70,7 @@ import { OrderBy } from './orderBy.pipe';
         CreateShoutComponent,
         ShoutsComponent,
         ShoutDetailsComponent,
+        ShoutDetailsInlineComponent,
         AnalyticsComponent,
         UserComponent,
         LoginComponent,
