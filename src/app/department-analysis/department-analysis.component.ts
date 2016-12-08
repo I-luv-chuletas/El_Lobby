@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from '../services/analytics.service';
 import { MostPopular } from '../mostpopular';
 import { OrderBy } from '../orderBy.pipe';
+import { PieChartComponent } from '../pie-chart/pie-chart.component';
 
 @Component({
   selector: 'department-analysis',

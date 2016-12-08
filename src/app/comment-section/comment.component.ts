@@ -24,7 +24,6 @@ export class CommentsComponent implements OnInit, AfterContentChecked{
 
     comments = new Array<Comments>();
 
-    // forPipeRating: number[];
     idShout:string;
     counter: number = 0;
     newCommentFlag: boolean = false;
