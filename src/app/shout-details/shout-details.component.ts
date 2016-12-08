@@ -4,6 +4,7 @@ import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
 import { ShoutsService } from '../services/shouts.service';
 import { CommentsService } from '../services/comments.service';
+import { Comments } from '../comments';
 
 @Component({
     selector: 'shout-detail',
@@ -17,7 +18,11 @@ export class ShoutDetailsComponent implements OnInit {
     shout:Shouts;
 
     temp: Shouts[];
+<<<<<<< HEAD
     commentSection: Comment[];
+=======
+    commentSection = new Array<Comments>();
+>>>>>>> cabeea590d198e26c3a50601a148390f8b452db3
 
     
     constructor(
@@ -34,9 +39,9 @@ export class ShoutDetailsComponent implements OnInit {
           this.shoutService.getShout(id)
                            .subscribe(sentShout => this.shout = sentShout );
           
-          this.commentService.getComments().subscribe(
+          this.commentService.getComments(id).subscribe(
               comments => this.commentSection = comments
-          )
+          );
           
         //   this.shout = JSON.parse(JSON.stringify(this.temp))
       });
