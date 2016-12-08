@@ -27,10 +27,7 @@ export class CommentsComponent implements OnInit{
 
     public likes: number;
     public dislikes: number;
-<<<<<<< HEAD
-=======
 
->>>>>>> 21b391f33fdb747dbac212e7a4cdcbb006464123
 
     ngOnInit() {
         console.log(this.shoutId);    
