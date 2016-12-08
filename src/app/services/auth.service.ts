@@ -20,12 +20,12 @@ export class AuthService {
   login(email:string, password:string): Observable<boolean> {
     return this.http.post(`${this.authURL}/login`, JSON.stringify({email: email, password: password}), this.options)
                     .map((response: Response) => {
-                      let token = response.json() && response.json().auth.id;
-                      if (token) {
+                      if (response.json().auth.id) {
+
                           localStorage.setItem('currentUser', JSON.stringify({ username: email, token: response.json().auth.id }));
                           localStorage.setItem('userID', response.json().id);
                           localStorage.setItem('email', email);
-                          localStorage.setItem('priv', response.json().priv);
+                          localStorage.setItem('priv', response.json().auth.priv);
                           // return true to indicate successful login
                           return true;
                       } else {
@@ -42,12 +42,11 @@ export class AuthService {
   signup(email: string, password:string): Observable<boolean> {
     return this.http.post(`${this.authURL}/register`, JSON.stringify({email: email, password: password}), this.options)
       .map((response: Response) => {
-
-        let token = response.json() && response.json().auth.id;
-        if(token){
+        if(response.json().id) {
           localStorage.setItem('currentUser', JSON.stringify({userName: email, token: response.json().auth.id}));
           localStorage.setItem('userID', response.json().id);
           localStorage.setItem('email', email);
+          localStorage.setItem('priv', response.json().priv);
           return true;
         } else {
          return false;

@@ -9,13 +9,14 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ShoutsService {
 // <<<<<<< HEAD
-    
+
 //     private shoutsURL = " http://api.neighbornet.io/shout";
 //     private headers   = new Headers({"Content-Type": "application/json" });
-    
+
 // =======
 
     private shoutsURL = "http://api.neighbornet.io/shout";
+    private popularityURL = " http://api.neighbornet.io/popularity/dept";
     private headers   = new Headers({"Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });
 
@@ -29,7 +30,7 @@ export class ShoutsService {
 //         return this.http.get(this.shoutsURL).toPromise().then(response => response.json().data as Shouts[])
 //         .catch(this.handleError);
 
-//     } 
+//     }
 // =======
 //                         <Shouts>
     getShouts(): Observable<Shouts> {
@@ -44,7 +45,14 @@ export class ShoutsService {
                .map((res:Response) => res.json())
                .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
-
+    /**
+    * returns shout count by dept
+    */
+    getShoutCountByDept(id: string): Observable<number> {
+        return this.http.get(`${this.popularityURL}/${id}`)
+               .map((res:Response) => res.json())
+               .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
 
     update(shout: Shouts): Observable<Shouts>{
 
@@ -54,8 +62,8 @@ export class ShoutsService {
                          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-   
-    
+
+
     metadataUpdating(){
 
 
@@ -71,7 +79,7 @@ export class ShoutsService {
                        .catch((error:any) => Observable.throw(console.log(error.status) || 'Server error'));
     }
 
-   
+
     private extractData(res: Response) {
         let body: JSON;
 
