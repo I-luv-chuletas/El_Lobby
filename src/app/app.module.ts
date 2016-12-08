@@ -9,6 +9,7 @@ import {HomeComponent} from './home/home.component';
 import {LikeWidgetComponent} from './like/like.component';
 import {CLikeWidgetComponent} from './clike/clike.component';
 import {AboutComponent} from './about/about.component';
+import {LogoutComponent} from './logout/logout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
 import {CommentsComponent} from './comment-section/comment.component';
@@ -57,6 +58,7 @@ import { OrderBy } from './orderBy.pipe';
         ShoutDetailsComponent,
         AnalyticsComponent,
         LoginComponent,
+        LogoutComponent,
         SignupComponent,
         SolutionsComponent,
         DepartmentAnalysisComponent,
