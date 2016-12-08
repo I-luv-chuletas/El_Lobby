@@ -52,7 +52,8 @@ import { DepartmentAnalysisComponent } from './department-analysis/department-an
 import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
 
 import { OrderBy } from './orderBy.pipe';
-
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { OrderBy } from './orderBy.pipe';
         DepartmentAnalysisComponent,
         DepartmentAnalysisComponent,
         ShoutsAnalysisComponent,
-        OrderBy
+        OrderBy,
+        PieChartComponent
 ],
   imports: [
       ReactiveFormsModule,
@@ -89,6 +91,7 @@ import { OrderBy } from './orderBy.pipe';
       HttpModule,
       JsonpModule,
       routing,
+      ChartsModule
   ],
   providers: [
     AuthGuard,

@@ -1,15 +1,11 @@
 <div *ngIf="shout" id="shoutContainer">
-    <h4 class="pull-right">{{shout.rating}}</h4> <h3>{{shout.title}}</h3>
-    <div><label>Created by:</label> {{shout.userID}} </div>
-
-    <div class="text-center container">
-        {{shout.message}}
-    </div>
-    <div class="buttons pull-right">
-        <span class="glyphicon glyphicon-triangle-top vote-up-off"></span>
-        <span class="glyphicon glyphicon-triangle-bottom vote-down-off"></span>
-    </div>
+  <div class="text-right">
+    <like-widget [id]="shout.id"></like-widget>
+  </div>
+  <h3>Asunto: {{shout.title}}</h3>
+  <p style="padding: 15px;"><b>Contenido de Petición:</b>  {{shout.message}}</p>
+  <div class="text-right" style="padding: 15px;">
+    <h5>Creado Por:</h5> {{shout.userID}}
+  </div>
 </div>
-
-
 <comment-section (onNewComment)="onNewComment($event)" [shout]='shout.id'></comment-section>
