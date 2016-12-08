@@ -25,7 +25,6 @@ export class AdminComponent implements OnInit {
       this.usersService.getUsers().subscribe((data) => {
           if (data) {
               this.users = data;
-              console.log(data);
           }
         },
         (error:any) => this.errorMessage = <any>error);
