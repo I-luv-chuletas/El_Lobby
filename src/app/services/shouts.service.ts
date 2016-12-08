@@ -32,7 +32,6 @@ export class ShoutsService {
 
 //     }
 // =======
-//                         <Shouts>
     getShouts(): Observable<Shouts> {
         return this.http.get(this.shoutsURL)
                 .map((res:Response) => res.json())
