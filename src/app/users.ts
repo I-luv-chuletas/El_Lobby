@@ -6,14 +6,15 @@ export class Users {
     Object.assign(this, values);
   }
 
-    id: number;
-    // name: string;
-    userName: string;
-    password: string;
+    id: string;
+    anon: string;
+    name: string;
+    dept: string;
+    priv: string;
     email: string;
-    priviliges: number;
-    departmentID: number;
-    departmentName: string;
-    subscribedShouts: number[];
-
+    password: string;
+    subscribedShouts: string[];
+    status: string;
+    createdAt: string;
+    updatedAt: string;
 }
