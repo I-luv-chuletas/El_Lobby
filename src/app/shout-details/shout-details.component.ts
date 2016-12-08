@@ -27,7 +27,7 @@ export class ShoutDetailsComponent implements OnInit {
           let id = params['id']; // El simbolo de suma antes de params convierte el id string a un int
 
           this.shoutService.getShout(id)
-                           .subscribe(shout => this.temp = shout, );
+                           .subscribe(shout => this.temp = shout);
           
         //   this.shout = JSON.parse(JSON.stringify(this.temp))
       });
