@@ -4,7 +4,7 @@ export class Comments {
     Object.assign(this, values);
   }
 
-    id: number;
+    id: string;
     shoutID: string;
     solution: string;
     officialReply: string;
