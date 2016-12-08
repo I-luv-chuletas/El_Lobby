@@ -1,5 +1,5 @@
 <shout-component></shout-component>
-<h1>Top Rated Shouts</h1>
+<h1>Shouts Populares:</h1>
 <div id="shoutDiv" *ngFor="let shout of shouts | orderBy: ['-rating']; let index=index; let odd=odd; let even=even;" (click)="showDetails(shout)"
             class="row" [ngClass]="{ odd: odd, even: even }">
       <div *ngIf="index<6">
