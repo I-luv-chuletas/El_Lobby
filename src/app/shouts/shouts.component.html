@@ -12,6 +12,11 @@
                   <ul class="dropdown-menu scrollable-menu" role="menu">
                     <li *ngFor="let dept of deps"><a>{{dept}}</a></li>
                   </ul>
+                  <div class="form-group">
+                  <!--<select class="form-control" id="deparment" name="departmento" required [(ngModel)]="deptValue" placeholder="Departamentos: ">
+                    <option *ngFor="let dept of deps; let index=index; " (click)="search(deptValue)">{{dept}}</option>
+                  </select>-->
+                  </div>
                 </div><!-- /btn-group -->
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
