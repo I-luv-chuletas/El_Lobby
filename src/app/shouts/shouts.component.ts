@@ -3,7 +3,7 @@ import { NgForm }    from '@angular/forms';
 import {Location} from '@angular/common';
 import {Observable} from 'rxjs/Rx';
 import {Router} from '@angular/router';
-import { OrderBy } from '../dashboard/orderBy.pipe';
+import { OrderBy } from '../orderBy.pipe';
 
 import {Shouts} from '../shouts';
 import { ShoutsService} from '../services/shouts.service';

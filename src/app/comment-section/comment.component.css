@@ -9,7 +9,7 @@
     border: none;
 }
 
-i:hover {
+like-widget:hover {
     cursor: pointer;
 }
 .row {
