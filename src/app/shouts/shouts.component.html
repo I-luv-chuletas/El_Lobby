@@ -22,7 +22,8 @@
     </ul>
   </div>
   <hr>
-    <ul *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
-            <li><h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span></li>
-    </ul>
+  <!-- Como puñeta lograr que aqui yo envie solo el titulo del shout -->
+    <div id="shouts" *ngFor="let shout of shouts; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }" class="posted" (click)="showDetails(shout)">
+            <h4>{{shout.title}}</h4><span class="glyphicon glyphicon-thumbs-up pull-right"></span>
+    </div>
 </div>

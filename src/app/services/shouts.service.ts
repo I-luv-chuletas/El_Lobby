@@ -31,7 +31,8 @@ export class ShoutsService {
 
 //     } 
 // =======
-    getShouts(): Observable<Shouts[]> {
+//                         <Shouts>
+    getShouts(): Observable<Shouts> {
         return this.http.get(this.shoutsURL)
                 .map((res:Response) => res.json())
                 .catch((error:any) => Observable.throw(error.json().error || 'Server error'));

@@ -4,9 +4,9 @@
   margin: left;
   font-family: 'Rosario', sans-serif;
   word-spacing: 2px;
+  min-height: 5em;
 }
 
 .shoutContainer {
   border: none;
-  min-height: 20%;
 }
