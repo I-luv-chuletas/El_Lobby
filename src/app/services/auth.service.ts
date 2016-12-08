@@ -22,8 +22,8 @@ export class AuthService {
                     .map((response: Response) => {
                       let token = response.json() && response.json().auth.id;
                       if (token) {
-                          localStorage.setItem('currentUser', JSON.stringify({ username: email, token: token }));
-                          localStorage.setItem('auth_token', token);
+                          localStorage.setItem('currentUser', JSON.stringify({ username: email, token: response.json().auth.id }));
+                          localStorage.setItem('userID', response.json().id);
                           localStorage.setItem('email', email);
                           // return true to indicate successful login
                           return true;

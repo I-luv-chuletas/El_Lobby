@@ -9,7 +9,7 @@
                 <input [(ngModel)]="model.content" type="text" class="form-control" placeholder="Write your opinion!" name="content">
                <button class="btn btn-success pull-right" (click)="addComment(model)">Post</button>
             </div>
-        </form>    
+        </form>
     </div>
 
     <hr>
@@ -21,16 +21,11 @@
                 <form class="list-group-item">
                     <p class="list-group-item-text"><b>{{comment.userID}} </b></p>
                     <p class="list-group-item-text">{{comment.message}}</p>
-                    <p>
-                        <button class="glyphicon glyphicon-thumbs-down text-warning" (click)="rate(0)"></button>
-                        <button class="glyphicon glyphicon-thumbs-up pull-right text-success" (click)="rate(1)"></button> 
-                    </p>
+
                     <p> Ratings: {{comment.rating}} </p>
                 </form>
+                <like-widget [id]="comment.shoutID"></like-widget>
             </div>
          </div>
     </div>
 </div>
-
-
-

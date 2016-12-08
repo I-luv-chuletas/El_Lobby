@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Shouts } from '../shouts';
 import { Location } from '@angular/common';
@@ -12,8 +12,9 @@ import { ShoutsService } from '../services/shouts.service';
 })
 export class ShoutDetailsComponent implements OnInit {
 
-    @Input() shout = new Shouts();
-    temp: Shouts[];
+    // @Input() shout = new Shouts();
+    shout:Shouts;
+    temp: Shouts;
 
     constructor(
         private shoutService: ShoutsService,
@@ -27,13 +28,17 @@ export class ShoutDetailsComponent implements OnInit {
           let id = params['id']; // El simbolo de suma antes de params convierte el id string a un int
 
           this.shoutService.getShout(id)
-                           .subscribe(shout => this.temp = shout);
+                           .subscribe(sentShout => this.shout = sentShout );
           
         //   this.shout = JSON.parse(JSON.stringify(this.temp))
       });
-      
-      
     }
+
+
+    // ngAfterViewInit(){
+    //     console.log("afterContentInit" + this.temp);
+    //     this.shout = JSON.parse(JSON.stringify(this.temp))
+    // }
 
 
     test(){
@@ -43,7 +48,7 @@ export class ShoutDetailsComponent implements OnInit {
 
 
     save(): void{
-
+        
     }
 
 

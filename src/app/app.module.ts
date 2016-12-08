@@ -6,6 +6,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {HomeComponent} from './home/home.component';
+import {LikeWidgetComponent} from './like/like.component';
 import {AboutComponent} from './about/about.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ShoutsComponent} from './shouts/shouts.component';
@@ -17,10 +18,11 @@ import {Departamento} from './deps';
 
 
 // Services
-import {ShoutsService} from './services/shouts.service'
+import {ShoutsService} from './services/shouts.service';
 import {CommentsService} from './services/comments.service';
 import {ValidationService} from './services/validation.service';
 import {AuthService} from './services/auth.service';
+import {LikesService} from './services/likes.service';
 
 // In memory web api, para simular http
 //import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -29,6 +31,9 @@ import {AuthService} from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SolutionsComponent } from './solutions/solutions.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { LoginGuard } from './_guards/login.guard';
+
 // import { DepartmentAnalysisComponent } from './home/department-analysis/department-analysis.component';
 import { DepartmentAnalysisComponent } from './department-analysis/department-analysis.component';
 import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.component';
@@ -39,6 +44,7 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
   declarations: [
         AppComponent,
         HomeComponent,
+        LikeWidgetComponent,
         AboutComponent,
         DashboardComponent,
         CommentsComponent,
@@ -62,6 +68,9 @@ import { ShoutsAnalysisComponent } from './shouts-analysis/shouts-analysis.compo
       routing,
   ],
   providers: [
+    AuthGuard,
+    LoginGuard,
+    LikesService,
     appRoutingProviders,
     ValidationService,
     CommentsService,

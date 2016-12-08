@@ -1,5 +1,7 @@
 import {ModuleWithProviders}  from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import { AuthGuard } from './_guards/auth.guard';
+import { LoginGuard } from './_guards/login.guard';
 
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
@@ -17,11 +19,11 @@ const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
     { path: 'home', component: DashboardComponent},
     { path: 'about', component: AboutComponent},
-    { path: 'create-shout', component: CreateShoutComponent},
+    { path: 'create-shout', component: CreateShoutComponent, canActivate: [AuthGuard]},
     { path: 'detail/:id', component: ShoutDetailsComponent},
     { path: 'shouts', component: ShoutsComponent},
     { path: 'analytics', component: AnalyticsComponent},
-    { path: 'login', component: LoginComponent},
+    { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
     { path: 'solutions', component:SolutionsComponent}
 ];
 

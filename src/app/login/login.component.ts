@@ -45,17 +45,16 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if(isValid)
       this.authService.login(model.email, model.password).subscribe(
-
-      (data) => {
-        if (data) {
-          this.invalidCred = false;
-          let link = ['home']
-          this.router.navigate(link);
+        (data) => {
+          if (data) {
+            this.invalidCred = false;
+            let link = ['home']
+            this.router.navigate(link);
+          }
+        },
+        (error) => {
+          this.invalidCred = true;
         }
-      },
-      (error) => {
-        this.invalidCred = true;
-      }
-    );
+      );
   }
 }

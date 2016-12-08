@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Rx';
 
 
 @Injectable()
-export class AnalyticsService {
+export class LikesService {
 
     private likesURL = "http://api.neighbornet.io/like";
     private dislikesURL = "http://api.neighbornet.io/dislike";
